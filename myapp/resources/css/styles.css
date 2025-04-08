@@ -1,0 +1,39 @@
+/* Estilos para la animación de subrayado */
+.nav-link {
+    position: relative;
+    color: #001f6f;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Espaciado debajo del texto */
+    width: 100%;
+    height: 2px;
+    background-color: #001f6f; /* Color amarillo */
+    transform: scaleX(0); /* Inicialmente oculta */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1); /* Aparece al hacer hover */
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url('../fonts/ubuntu.woff2') format('woff2'),
+         url('../fonts/ubuntu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ubuntu', sans-serif;
+}
+
+.ubuntu {
+    font-family: 'ubuntu', sans-serif;
+}
