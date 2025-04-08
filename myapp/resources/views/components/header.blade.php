@@ -10,7 +10,7 @@
                 <li><a href="/" class="nav-link">Inicio</a></li>
                 <li><a href="/about" class="nav-link">Nosotros</a></li>
                 <li><a href="/contact" class="nav-link">Observatorio del CTI</a></li>
-                <li><a href="/contact" class="nav-link">Prensa</a></li>
+                <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
                 <li><a href="/contact" class="nav-link">Contacto</a></li>
 
             <li>
