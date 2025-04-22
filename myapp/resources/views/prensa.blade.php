@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>Prensa</title>
 
     <!-- Vite CSS & JS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -75,12 +75,12 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
     @foreach($noticias as $noticia)
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
-        <img src="{{ $noticia['imagen'] }}" alt="Imagen de {{ $noticia['titulo'] }}" class="w-full h-40 object-cover">
+        <img src="{{ asset('storage/' . $noticia->image) }}" alt="Imagen de {{ $noticia->titulo }}" class="w-full h-40 object-cover">
 
         <div class="p-4 text-left">
-          <h3 class="text-xs font-semibold text-gray-500 uppercase mb-1">NOTICIAS FLUIDIT</h3>
-          <h4 class="text-md font-bold text-blue-900 mb-2 uppercase">{{ $noticia['titulo'] }}</h4>
-          <p class="text-sm text-gray-600 mb-4">{{ $noticia['descripcion'] }}</p>
+          <h3 class="text-xs font-semibold text-gray-500 uppercase mb-1">NOTICIAS FUVIDIT</h3>
+          <h4 class="text-md font-bold text-blue-900 mb-2 uppercase">{{ $noticia->titulo }}</h4>
+          <p class="text-sm text-gray-600 mb-4">{{ $noticia->descripcion }}</p>
           <img src="/images/instagram.png" alt="Logo" class="w-6">
         </div>
       </div>
