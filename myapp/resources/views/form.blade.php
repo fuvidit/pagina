@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel</title>
+    <title>Iniciar sesión</title>
 
     <!-- Vite CSS & JS -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -26,7 +26,12 @@
                     Iniciar sesión
                 </h2>
 
-                <form class="mt-8 space-y-6" action="route('index')" method="POST">
+                @if(session('success'))
+                    <h1 class="mx-auto">{{session('success')}}</h1>
+                @endif
+
+                <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
+                    @csrf
                     <div>
 
                         <!-- Campo de correo electrónico -->
@@ -46,21 +51,11 @@
                                 class="appearance-none relative block w-full px-3 py-2 border border-[#0054db] placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#0085fe] focus:border-[#0085fe] focus:z-10"
                                 placeholder="Contraseña">
                         </div>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-                            <label for="remember-me" class="ml-2 block font-bold text-sm text-[#001f6f]">
-                                Recordarme
-                            </label>
-                        </div>
-
-                    </div>
+                    </div>                    
 
                     <div>
                         <button type="submit"
-                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-bold rounded-full text-black bg-[#f9bf27] hover:bg-[#ffa800] transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent font-bold rounded-full text-black bg-[#f9bf27] hover:bg-[#ffa800] transition duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" name="">
                             INICIAR SESIÓN
                         </button>
                     </div>
