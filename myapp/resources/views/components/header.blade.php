@@ -8,7 +8,7 @@
         <nav class="hidden lg:flex pr-10">
             <ul class="flex space-x-6 items-center">
                 <li><a href="/" class="nav-link">Inicio</a></li>
-                <li><a href="/about" class="nav-link">Nosotros</a></li>
+                <li><a href="{{ route('nosotros') }}" class="nav-link">Nosotros</a></li>
                 <li><a href="/contact" class="nav-link">Observatorio del CTI</a></li>
                 <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
                 <li><a href="/contact" class="nav-link">Contacto</a></li>
@@ -45,10 +45,10 @@
     </div>
     <ul class="p-6 space-y-4">
         <li><a href="/" class="nav-link">Inicio</a></li>
-        <li><a href="/about" class="nav-link">Nosotros</a></li>
-        <li><a href="/contact" class="nav-link">Observatorio del CTI</a></li>
-        <li><a href="/contact" class="nav-link">Prensa</a></li>
-        <li><a href="/contact" class="nav-link">Contacto</a></li>
+        <li><a href="/nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="/otic" class="nav-link">Observatorio del CTI</a></li>
+        <li><a href="/prensa" class="nav-link">Prensa</a></li>
+        <li><a href="/contacto" class="nav-link">Contacto</a></li>
         <li>
             <button type="button"
                 class="bg-yellow-400 text-black font-bold text-lg py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition">
