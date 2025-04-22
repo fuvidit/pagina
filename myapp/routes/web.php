@@ -1,19 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 
-Route::get('/', function () { return view('welcome'); });
+// RUTA PRINCIPAL
+Route::get('/', function () { 
+    return view('welcome'); 
+});
 
+// OTRAS VISTAS
 Route::get('/prensa', function () {
     return view('prensa');
 })->name('prensa');
 
+Route::get('/nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
+
 Route::get('/form', function () {
     return view('form');
-})->name('form-login');
-
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+})->name('form');
 
 
 

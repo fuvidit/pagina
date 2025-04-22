@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Inicio</title>
 
     <!-- Vincula tu archivo de Tailwind CSS aquí -->
@@ -142,7 +144,7 @@
             Somos: <strong>Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
         </p>
         <p class="md:w-1/2">
-            En el <strong>vértice 5</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong>Unetrans</strong>, Universidad Nacional Experimental del Transporte, y la <strong>Fuvidit</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
+            En el <strong>Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong>UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong>FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
         </p>
     </div>
 </div>
@@ -160,6 +162,8 @@
 <x-map />
 
 <x-footer />
+
+
 
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
