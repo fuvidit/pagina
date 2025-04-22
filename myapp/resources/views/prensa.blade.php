@@ -73,6 +73,8 @@
   @endphp
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
+    @if (count($noticias) > 10)
+      
     @foreach($noticias as $noticia)
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
         <img src="{{ asset('storage/' . $noticia->image) }}" alt="Imagen de {{ $noticia->titulo }}" class="w-full h-40 object-cover">
@@ -85,6 +87,9 @@
         </div>
       </div>
     @endforeach
+    @else
+        <h2>no hay na</h2>
+    @endif
   </div>
 </div>
 
@@ -111,6 +116,9 @@
   @endphp
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
+    
+    @if(count($noticias) > 10)
+   
     @foreach($noticias as $noticia)
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
         <img src="{{ $noticia['imagen'] }}" alt="Imagen de {{ $noticia['titulo'] }}" class="w-full h-40 object-cover">
@@ -123,6 +131,9 @@
         </div>
       </div>
     @endforeach
+    @else
+        <h2>no hay na</h2>
+    @endif
   </div>
 </div>
 
@@ -152,6 +163,9 @@
   @endphp
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
+    @if (count($noticias) > 10)
+        
+
     @foreach($noticias as $noticia)
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
         <img src="{{ $noticia['imagen'] }}" alt="Imagen de {{ $noticia['titulo'] }}" class="w-full h-40 object-cover">
@@ -163,7 +177,11 @@
           <img src="/images/instagram.png" alt="Logo" class="w-6">
         </div>
       </div>
-    @endforeach
+    @endforeach   
+    
+    @else
+    <h2>no hay na</h2>
+    @endif
   </div>
 </div>
 
