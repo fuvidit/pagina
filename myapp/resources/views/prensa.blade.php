@@ -19,7 +19,7 @@
 <body class="bg-gray-50">
 
 
-<div class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] bg-cover bg-center" style="background-image: url('../images/sala.jpg');">
+<div class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] bg-cover bg-center" style="background-image: url('../images/prensa.jpg');">
   <!-- Capa oscura -->
   <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 

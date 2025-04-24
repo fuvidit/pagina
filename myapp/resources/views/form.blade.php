@@ -64,7 +64,7 @@
         </div>
 
         <!-- Sección derecha con la imagen de fondo -->
-        <div class="hidden md:block w-1/2 bg-cover bg-center" style="background-image: url('../images/sala.jpg');">
+        <div class="hidden md:block w-1/2 bg-cover bg-center" style="background-image: url('../images/coll.png');">
             <div class="w-full h-full bg-black opacity-50"></div> <!-- Filtro oscuro sobre la imagen -->
         </div>
 </div>
