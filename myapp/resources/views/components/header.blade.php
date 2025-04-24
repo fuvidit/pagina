@@ -14,7 +14,7 @@
                 <li><a href="/contact" class="nav-link">Contacto</a></li>
 
             <li>
-                <a href="{{ route('form-login') }}"
+                <a href="{{ route('form') }}"
                     class="mt-1 bg-yellow-400 text-black font-bold text-base py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition inline-block">
                     INICIAR SESIÓN
                 </a>
