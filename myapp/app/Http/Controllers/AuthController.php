@@ -45,7 +45,7 @@ class AuthController extends Controller
 	    }
 	
 	    // Si el usuario no existe devolvemos al usuario al formulario de login con un mensaje de error
-	    return redirect("form-login")->withSuccess('Los datos introducidos no son correctos');
+	    return redirect("login")->withSuccess('Los datos introducidos no son correctos');
 	}
 	
 	/**
