@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 // RUTA PRINCIPAL
 Route::get('/', function () { 
@@ -16,12 +17,6 @@ Route::get('/nosotros', function () {
     return view('nosotros');
 })->name('nosotros');
 
-Route::get('/form', function () {
-    return view('form');
-})->name('form');
-
-
-
-
-// Route::get('/', function () { return view('form'); })-> namespace ('formulario');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/custom-login', [AuthController::class, 'login'])->name('custom-login');
 
