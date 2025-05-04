@@ -15,9 +15,9 @@
     <x-header />
 
     <!-- Sección Principal con posible imagen de fondo -->
-    <div class="relative bg-cover bg-center py-24" style="background-image: url('{{ asset('images/observatorio_background.jpg') }}');">
+    <div class="relative bg-cover bg-center py-24" style="background-image: url('{{ asset('images/foto2.jpg') }}');">
         <!-- Capa oscura opcional para mejorar legibilidad del texto -->
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-75"></div>
 
         <div class="relative container mx-auto px-6 text-white z-10">
             <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Observatorio FUVIDIT</h1>
