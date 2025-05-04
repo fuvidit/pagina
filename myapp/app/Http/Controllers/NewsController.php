@@ -29,7 +29,7 @@ class NewsController extends Controller
             'titulo' => $request->titulo,
             'descripcion' => $request->descripcion,
             'link' => $request->link,
-            'image' => $imagePath,
+            'image' => $imagePath, // <-- Usando 'image'
             'fecha' => $request->fecha,
         ]);
 
@@ -39,7 +39,7 @@ class NewsController extends Controller
 
         public function index()
         {
-            $noticias = Noticia::latest()->get(); // Obtener todas las imágenes
+            $noticias = Noticia::latest()->get(); // O usa paginate() si prefieres paginación
             return view('prensa', compact('noticias'));
         }
 
@@ -49,7 +49,7 @@ class NewsController extends Controller
             $noticia = Noticia::findOrFail($id);
             return view('prensa.editar', compact('noticia'));
         }
-    
+
         // Actualizar la noticia
         public function update(Request $request, $id)
         {
@@ -60,31 +60,31 @@ class NewsController extends Controller
                 'link' => 'nullable|url',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
-    
+
             $noticia = Noticia::findOrFail($id);
             $noticia->titulo = $request->titulo;
             $noticia->fecha = $request->fecha;
             $noticia->descripcion = $request->descripcion;
             $noticia->link = $request->link;
-    
+
             // Si se sube una nueva imagen
             if ($request->hasFile('image')) {
                 $imagePath = $request->file('image')->store('prensa', 'public');
-                $noticia->image = $imagePath;
+                $noticia->image = $imagePath; // <-- Usando 'image'
             }
-    
+
             $noticia->save();
-    
+
             return redirect()->route('prensa.editar', $id)->with('success', 'Noticia actualizada correctamente.');
-            
+
         }
-    
+
         // Eliminar la noticia
         public function destroy($id)
         {
             $noticia = Noticia::findOrFail($id);
             $noticia->delete();
-    
+
             return redirect()->route('prensa')->with('success', 'Noticia eliminada correctamente.');
         }
 

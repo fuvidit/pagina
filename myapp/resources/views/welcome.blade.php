@@ -4,17 +4,17 @@
  <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Inicio</title>
 
     <!-- Vincula tu archivo de Tailwind CSS aquí -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
 
 </head>
 
 <body>
-    
+
 <x-header />
 
 <div class="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] bg-cover bg-center" style="background-image: url('../images/sala.jpg');">
@@ -27,10 +27,10 @@
       BIENVENIDO <br> A FUVIDIT WEB
     </h1>
     <p class="text-sm sm:text-lg md:text-xl mt-4 sm:mt-6 drop-shadow ubuntu">
-      Este es un portal web institucional donde encontrarás información sobre la FUVIDIT. 
+      Este es un portal web institucional donde encontrarás información sobre la FUVIDIT.
       Entérate de todo sobre Investigación, Desarrollo e Innovación para el transporte Venezolano aquí.
     </p>
-    <button class="ubuntu mt-6 sm:mt-8 bg-yellow-400 text-black font-bold text-base sm:text-lg py-2 sm:py-3 px-6 sm:px-8 rounded-lg shadow-lg hover:bg-yellow-300 transition">
+    <button class="ubuntu mt-6 sm:mt-8 bg-yellow-500 text-blue-900 font-bold text-base sm:text-lg py-2 sm:py-3 px-6 sm:px-8 rounded-lg shadow-lg hover:bg-yellow-400 transition">
       NUESTRO CATÁLOGO
     </button>
   </div>
@@ -40,7 +40,7 @@
 <!-- Contenedor del Carrusel -->
 <div class="relative">
     <!-- FONDO SOLO PARA EL CARRUSEL, SOBRESALE UN POCO HACIA ABAJO -->
-    <span class="absolute inset-x-0 bottom-[-2vh] h-[calc(100%+5vh)] bg-[#efefef] z-[-1]"></span>
+    <span class="absolute inset-x-0 bottom-[-2vh] h-[calc(100%+5vh)] bg-yellow-50 z-[-1]"></span>
 
     <div class="flex justify-center mt-[-3vh] z-20 relative">
         <div class="swiper w-full h-3 max-w-full">
@@ -141,10 +141,10 @@
     </h2>
     <div class="flex flex-col md:flex-row gap-17 text-xl md:text-2xl text-justify leading-relaxed">
         <p class="md:w-1/2">
-            Somos: <strong>Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
+            Somos: <strong class="text-red-700">Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
         </p>
         <p class="md:w-1/2">
-            En el <strong>Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong>UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong>FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
+            En el <strong class="text-red-700">Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong class="text-red-700">UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong class="text-red-700">FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
         </p>
     </div>
 </div>
@@ -154,7 +154,7 @@
 
 <x-otic />
 
-<div class="md:mt-[150px] h-1 w-full bg-gradient-to-r from-blue-600 via-yellow-500 to-blue-500 my-10 rounded-full"></div>
+<div class="md:mt-[150px] h-1 w-full bg-gradient-to-r from-blue-600 via-yellow-500 to-red-600 my-10 rounded-full"></div>
 
 
 <x-card />

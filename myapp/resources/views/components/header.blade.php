@@ -1,7 +1,9 @@
-<header class="bg-white p-7">
+<header class="bg-white p-7 relative z-30">
     <div class="flex justify-between items-center">
-        <div> 
-            <img src="../images/logo.png" alt="Logo" class="w-32 pt-2"> 
+        <div>
+            <a href="{{ route('inicio') }}"> <!-- Enlace añadido -->
+                <img src="../images/logo.png" alt="Logo" class="w-32 pt-2">
+            </a> <!-- Cierre del enlace -->
         </div>
 
         <!-- Menú normal (Desktop) -->
@@ -9,9 +11,9 @@
             <ul class="flex space-x-6 items-center">
                 <li><a href="/" class="nav-link">Inicio</a></li>
                 <li><a href="{{ route('nosotros') }}" class="nav-link">Nosotros</a></li>
-                <li><a href="/contact" class="nav-link">Observatorio del CTI</a></li>
+                <li><a href="{{ route('observatorio') }}" class="nav-link">Observatorio del CTI</a></li>
                 <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
-                <li><a href="/contact" class="nav-link">Contacto</a></li>
+                <li><a href="#footer" class="nav-link">Contacto</a></li>
 
             <li>
                 <a href="{{ route('login') }}"
@@ -44,11 +46,11 @@
         <button id="close-menu" class="text-2xl text-gray-500">&times;</button>
     </div>
     <ul class="p-6 space-y-4">
-        <li><a href="/" class="nav-link">Inicio</a></li>
-        <li><a href="/nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="/otic" class="nav-link">Observatorio del CTI</a></li>
-        <li><a href="/prensa" class="nav-link">Prensa</a></li>
-        <li><a href="/contacto" class="nav-link">Contacto</a></li>
+        <li><a href="{{ route('inicio') }}" class="nav-link">Inicio</a></li>
+        <li><a href="{{ route('nosotros') }}" class="nav-link">Nosotros</a></li>
+        <li><a href="{{ route('observatorio') }}" class="nav-link">Observatorio del CTI</a></li>
+        <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
+        <li><a href="#footer" class="nav-link">Contacto</a></li>
         <li>
             <button type="button"
                 class="bg-yellow-400 text-black font-bold text-lg py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition">
@@ -114,13 +116,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 
             const image = document.querySelector('.atomo');
-            
+
             function rotate() {
               image.style.transform = 'rotate(' + (angle++ % 360) + 'deg)';
               requestAnimationFrame(rotate);
             }
-            
+
             let angle = 0;
             rotate();
-        
+
 </script>

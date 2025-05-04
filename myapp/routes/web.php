@@ -2,16 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ObservatorioController;
 
 // RUTA PRINCIPAL
-Route::get('/', function () { 
-    return view('welcome'); 
-});
+Route::get('/', function () {
+    return view('welcome');
+})->name('inicio');
 
 // OTRAS VISTAS
-Route::get('/prensa', function () {
-    return view('prensa');
-})->name('prensa');
+Route::get('/prensa', [NewsController::class, 'index'])->name('prensa');
 
 Route::get('/nosotros', function () {
     return view('nosotros');
@@ -19,4 +19,4 @@ Route::get('/nosotros', function () {
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/custom-login', [AuthController::class, 'login'])->name('custom-login');
-
+Route::get('/observatorio', [ObservatorioController::class, 'indicadores'])->name('observatorio');
