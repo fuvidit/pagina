@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ObservatorioController;
+use App\Http\Controllers\ChatController;
 
 // RUTA PRINCIPAL
 Route::get('/', function () {
@@ -20,3 +21,7 @@ Route::get('/nosotros', function () {
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/custom-login', [AuthController::class, 'login'])->name('custom-login');
 Route::get('/observatorio', [ObservatorioController::class, 'indicadores'])->name('observatorio');
+Route::post('/chat', [ChatController::class, 'handleMessage'])->name('chat');
+Route::get('/test-chat', function() {
+    return response()->json(['message' => 'Test successful']);
+});

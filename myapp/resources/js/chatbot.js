@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const chatIcon = document.createElement("div");
-    chatIcon.innerHTML = "💬";
-    chatIcon.style.cssText = "position:fixed;bottom:20px;right:20px;background:#4f46e5;color:#fff;padding:12px;border-radius:50%;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);";
-    document.body.appendChild(chatIcon);
+ //   const chatIcon = document.createElement("div");
+  //  chatIcon.innerHTML = "💬";
+    //chatIcon.style.cssText = "position:fixed;bottom:20px;right:20px;background:#4f46e5;color:#fff;padding:12px;border-radius:50%;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);";
+    //document.body.appendChild(chatIcon);
 
     const chatBox = document.createElement("div");
     chatBox.style.cssText = "position:fixed;bottom:80px;right:20px;width:300px;max-height:400px;background:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,0.3);padding:10px;overflow:auto;display:none;flex-direction:column;gap:5px;font-family:sans-serif;";
