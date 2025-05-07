@@ -228,67 +228,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // Respuestas predefinidas
     const responses = {
         'hola' : '¡Hola! ¿Cómo puedo ayudarte hoy?',
-
-'buenas' : '¡Hola! ¿Cómo puedo ayudarte hoy?', // Añadido 'buenas'
-
-'adios' : '¡Hasta luego! Que tengas un buen día.',
-
-'adiós' : '¡Hasta luego! Que tengas un buen día.',
-
-'chao' : '¡Hasta luego! Que tengas un buen día.', // Añadido 'chao'
-
-'gracias' : '¡De nada! Si necesitas algo más, no dudes en preguntar.',
-
-'ayuda' : 'Claro, ¿en qué necesitas ayuda?',
-
-'problema' : 'Lamento que estés teniendo problemas. ¿Puedes darme más detalles?',
-
-'informacion' : 'Claro, ¿qué tipo necesitas conocer sobre la FUVIDIT?',
-
-'información' : 'Claro, ¿qué tipo de información necesitas?',
-
-'significa' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
-
-'significan' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
-
-'objetivo' : 'Promover y desarrollar actividades de investigación, desarrollo e innovación que resulten en la creación de conocimiento, productos, soluciones y servicios de muy alto nivel.\n\nAsí como desarrollos innovadores que contribuyan al avance de la ciencia y la tecnología para promover el transporte. el desarrollo de la industria y del país en general, así como la soberanía nacional y las capacidades creativas tecnológicamente independientes.', // Con salto de línea
-
-'presidente' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
-
-'presidenta' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
-
-'preside' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
-
-'funcion' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea y corregido 'hace' a 'funcion'/'función'
-
-'función' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea
-
-'vision' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
-
-'visión' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
-
-'ubicacion' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
-
-'ubicación' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
-
-'queda' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
-
-'contacto' : 'Teléfono: (0212) 235 06 40\nCorreo electrónico: despfuvidit@gmail.com', // Con salto de línea
-
-'areas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
-
-'áreas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
-
-'creacion' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
-
-'creación' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
-
-'creo' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
-
-'creó' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes:
+        'buenas' : '¡Hola! ¿Cómo puedo ayudarte hoy?', // Añadido 'buenas'
+        'adios' : '¡Hasta luego! Que tengas un buen día.',
+        'adiós' : '¡Hasta luego! Que tengas un buen día.',
+        'chao' : '¡Hasta luego! Que tengas un buen día.', // Añadido 'chao'
+        'gracias' : '¡De nada! Si necesitas algo más, no dudes en preguntar.',
+        'ayuda' : 'Claro, ¿en qué necesitas ayuda?',
+        'problema' : 'Lamento que estés teniendo problemas. ¿Puedes darme más detalles?',
+        'informacion' : 'Claro, ¿qué tipo necesitas conocer sobre la FUVIDIT?',
+        'información' : 'Claro, ¿qué tipo de información necesitas?',
+        'significa' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
+        'significan' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
+        'objetivo' : 'Promover y desarrollar actividades de investigación, desarrollo e innovación que resulten en la creación de conocimiento, productos, soluciones y servicios de muy alto nivel.\n\nAsí como desarrollos innovadores que contribuyan al avance de la ciencia y la tecnología para promover el transporte. el desarrollo de la industria y del país en general, así como la soberanía nacional y las capacidades creativas tecnológicamente independientes.', // Con salto de línea
+        'presidente' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+        'presidenta' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+        'preside' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+        'funcion' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea
+        'función' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea
+        'vision' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
+        'visión' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
+        'ubicacion' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+        'ubicación' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+        'queda' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+        'contacto' : 'Teléfono: (0212) 235 06 40\nCorreo electrónico: despfuvidit@gmail.com', // Con salto de línea
+        'areas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
+        'áreas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
+        'creacion' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+        'creación' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+        'creo' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+        'creó' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).'
+        // Puedes añadir más respuestas aquí si es necesario
     };
 
-    const defaultResponse = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "Cuál es el objetivo de la FUVIDIT?", "Contacto", "Cuál es su ubicación?", "Quién preside la FUVIDIT?, etc...';
+    const defaultResponse = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "objetivo", "contacto", "ubicación", "presidente" o "creación"?';
 
     // Función para animar la apertura del chat
     function openChat() {
