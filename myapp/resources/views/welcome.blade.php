@@ -167,26 +167,22 @@
 {{-- Chat Widget --}}
 <div id="chat-widget-container" class="fixed bottom-5 right-5 z-50">
     {{-- Chat Button --}}
-    <button id="chat-open-button" class="bg-blue-900 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition focus:outline-none flex items-center space-x-2 transform hover:scale-105 transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-3.862 8.25-8.625 8.25S3.75 16.556 3.75 12 7.612 3.75 12.375 3.75s8.625 3.694 8.625 8.25z" />
+    <button id="chat-open-button" class="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition focus:outline-none flex items-center space-x-2 transform hover:scale-105 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
         </svg>
-        <span class="inline">¡Prueba nuestro Bot!</span>
+        <span>Chat</span>
     </button>
+    {{-- Eliminado el botón duplicado de aquí --}}
 
     {{-- Chat Window --}}
-    <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transform scale-95 opacity-0 transition-all duration-300" style="max-height: 70vh;">
-        {{-- Header --}}
-        <div class="bg-gradient-to-r from-blue-900 to-blue-700 text-white p-4 flex justify-between items-center rounded-t-2xl">
-            <div class="flex items-center space-x-3">
-                <div class="bg-yellow-400 rounded-full p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-900">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                    </svg>
-                </div>
-                <h3 class="font-bold text-lg">Asistente FUVIDIT</h3>
+    <div id="chat-widget" class="fixed bottom-5 right-5 w-80 md:w-96 bg-white rounded-2xl shadow-xl transform scale-0 opacity-0 origin-bottom-right transition-all duration-300 z-50 flex flex-col" style="height: 450px; max-height: 80vh;">
+        {{-- Chat Header --}}
+        <div class="p-4 bg-blue-600 text-white rounded-t-2xl flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <h3 class="font-bold text-lg">FUVI</h3>
             </div>
-            <button id="chat-close-button" class="bg-yellow-400 text-blue-900 p-1.5 rounded-full hover:bg-yellow-300 transition transform hover:rotate-90 duration-300">
+            <button id="chat-close-button" class="bg-white text-blue-600 p-1.5 rounded-full hover:bg-blue-100 transition transform hover:rotate-90 duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -194,15 +190,10 @@
         </div>
 
         {{-- Messages Area --}}
-        <div id="chat-messages" class="flex-grow p-4 space-y-4 overflow-y-auto bg-gray-50" style="min-height: 250px; max-width: 100%;">
+        <div id="chat-messages" class="flex-grow p-4 space-y-4 overflow-y-auto bg-blue-50" style="min-height: 250px; max-width: 100%;">
             {{-- Example Bot Message --}}
-            <div class="flex items-start space-x-2">
-                <div class="bg-yellow-400 rounded-full p-2 mt-1 flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-900">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                    </svg>
-                </div>
-                <div class="bg-white text-blue-900 p-3 rounded-lg rounded-tl-none shadow-md border border-gray-200 break-words" style="max-width: calc(100% - 3rem);">
+            <div class="flex items-start mb-4">
+                <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tl-none shadow-md break-words max-w-[85%]">
                     <p class="text-sm">¡Hola! Soy el asistente virtual de FUVIDIT. ¿En qué puedo ayudarte hoy?</p>
                 </div>
             </div>
@@ -212,7 +203,7 @@
         <div class="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
             <div class="flex items-center space-x-2">
                 <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." class="flex-grow border border-gray-300 rounded-full py-2 px-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm">
-                <button id="chat-send-button" class="bg-gradient-to-r from-yellow-500 to-yellow-400 text-blue-900 font-bold p-2 rounded-full hover:from-yellow-400 hover:to-yellow-300 transition focus:outline-none focus:ring-2 focus:ring-yellow-500 transform hover:scale-105 active:scale-95 duration-200">
+                <button id="chat-send-button" class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                     </svg>
@@ -229,117 +220,138 @@
 document.addEventListener('DOMContentLoaded', function () {
     const chatOpenButton = document.getElementById('chat-open-button');
     const chatCloseButton = document.getElementById('chat-close-button');
-    const chatWindow = document.getElementById('chat-window');
+    const chatWindow = document.getElementById('chat-widget'); // Corregido para apuntar a chat-widget
     const chatMessages = document.getElementById('chat-messages');
     const chatInput = document.getElementById('chat-input');
     const chatSendButton = document.getElementById('chat-send-button');
-    
+
     // Respuestas predefinidas
     const responses = {
-        'hola': '¡Hola! ¿En qué puedo ayudarte?',
-        'quiénes somos': 'Somos FUVIDIT, la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte. Gestionamos proyectos para la soberanía tecnológica del transporte multimodal.',
-        'fuvidit': 'FUVIDIT es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte. Nuestro objetivo es impulsar la soberanía tecnológica e industrial del transporte multimodal en Venezuela.',
-        'contacto': 'Puedes encontrar nuestra información de contacto en la sección correspondiente de la página o visitarnos en nuestra sede.',
-        'proyectos': 'Desarrollamos diversos proyectos en el ámbito del transporte. ¿Te interesa alguno en particular?',
-        'catálogo': 'Nuestro catálogo de productos y servicios está disponible en la sección "Nuestro Catálogo". ¡Te invito a revisarlo!',
-        'gracias': '¡De nada! Si tienes más preguntas, no dudes en consultar.',
-        'adiós': '¡Hasta luego! Que tengas un buen día.',
-        'horario': 'Nuestro horario de atención es de Lunes a Viernes de 8:00 AM a 5:00 PM.',
-        'misión': 'Nuestra misión es impulsar la investigación, el desarrollo y la innovación tecnológica para fortalecer el sistema de transporte multimodal en Venezuela, contribuyendo al desarrollo soberano del país.',
-        'visión': 'Ser la institución líder en investigación, desarrollo e innovación para el transporte en Venezuela, reconocida por su excelencia y contribución al bienestar social y económico de la nación.',
-        'servicios': 'Ofrecemos una variedad de servicios, incluyendo asesoría técnica, desarrollo de prototipos, capacitación especializada y más. ¿Podrías especificar qué tipo de servicio te interesa?',
-        'ubicación': 'Nuestra sede principal se encuentra en Caracas. Puedes ver la ubicación exacta en el mapa de nuestra página web.'
+        'hola' : '¡Hola! ¿Cómo puedo ayudarte hoy?',
+
+'buenas' : '¡Hola! ¿Cómo puedo ayudarte hoy?', // Añadido 'buenas'
+
+'adios' : '¡Hasta luego! Que tengas un buen día.',
+
+'adiós' : '¡Hasta luego! Que tengas un buen día.',
+
+'chao' : '¡Hasta luego! Que tengas un buen día.', // Añadido 'chao'
+
+'gracias' : '¡De nada! Si necesitas algo más, no dudes en preguntar.',
+
+'ayuda' : 'Claro, ¿en qué necesitas ayuda?',
+
+'problema' : 'Lamento que estés teniendo problemas. ¿Puedes darme más detalles?',
+
+'informacion' : 'Claro, ¿qué tipo necesitas conocer sobre la FUVIDIT?',
+
+'información' : 'Claro, ¿qué tipo de información necesitas?',
+
+'significa' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
+
+'significan' : 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
+
+'objetivo' : 'Promover y desarrollar actividades de investigación, desarrollo e innovación que resulten en la creación de conocimiento, productos, soluciones y servicios de muy alto nivel.\n\nAsí como desarrollos innovadores que contribuyan al avance de la ciencia y la tecnología para promover el transporte. el desarrollo de la industria y del país en general, así como la soberanía nacional y las capacidades creativas tecnológicamente independientes.', // Con salto de línea
+
+'presidente' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+
+'presidenta' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+
+'preside' : 'Mediante la Gaceta Oficial Nro. 42.346, se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+
+'funcion' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea y corregido 'hace' a 'funcion'/'función'
+
+'función' : 'Gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.', // Con salto de línea
+
+'vision' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
+
+'visión' : 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.', // Con salto de línea
+
+'ubicacion' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+
+'ubicación' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+
+'queda' : 'Calle Vía Centro a la Autopista Fco Fajardo con Av. Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Sector Los Dos Caminos, Caracas, Miranda, Zona Postal 1071.',
+
+'contacto' : 'Teléfono: (0212) 235 06 40\nCorreo electrónico: despfuvidit@gmail.com', // Con salto de línea
+
+'areas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
+
+'áreas' : 'La FUVIDIT engloba los sectores Terrestres, Ferroviarios, Aéreos y Marítimos',
+
+'creacion' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+
+'creación' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+
+'creo' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes: la UNETRANS (Universidad Nacional Experimental del Transporte) y la FUVIDIT (Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte).',
+
+'creó' : 'En febrero de 2019 se crea la Gran Misión Transporte Venezuela. En el vértice 5, que es el eje científico y académico de la gran misión, se crean dos entes:
     };
-    
-    const defaultResponse = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "quiénes somos", "proyectos", "contacto", etc.?';
+
+    const defaultResponse = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "Cuál es el objetivo de la FUVIDIT?", "Contacto", "Cuál es su ubicación?", "Quién preside la FUVIDIT?, etc...';
 
     // Función para animar la apertura del chat
     function openChat() {
         // Primero mostramos el elemento (quitamos hidden)
-        chatWindow.classList.remove('hidden');
-        
-        // Esperamos un milisegundo para que el navegador procese el cambio
-        setTimeout(() => {
-            // Aplicamos la animación
-            chatWindow.classList.remove('scale-95', 'opacity-0');
-            chatWindow.classList.add('scale-100', 'opacity-100');
-            
-            // Ocultamos el botón
-            chatOpenButton.classList.add('hidden');
-        }, 10);
+        chatWindow.classList.remove('hidden', 'scale-0', 'opacity-0'); // Asegurarse de quitar hidden si estaba
+        chatWindow.classList.add('scale-100', 'opacity-100');
+
+
+        // Ocultamos el botón de abrir chat
+        chatOpenButton.classList.add('hidden');
     }
 
     // Función para animar el cierre del chat
     function closeChat() {
-        // Primero aplicamos la animación de cierre
         chatWindow.classList.remove('scale-100', 'opacity-100');
-        chatWindow.classList.add('scale-95', 'opacity-0');
-        
-        // Esperamos a que termine la animación
-        setTimeout(() => {
-            // Ocultamos el chat
-            chatWindow.classList.add('hidden');
-            
-            // Mostramos el botón
-            chatOpenButton.classList.remove('hidden');
-        }, 300); // Este tiempo debe coincidir con la duración de la animación
+        chatWindow.classList.add('scale-0', 'opacity-0'); // Usar scale-0 para la animación de cierre
+
+        // Mostramos el botón de abrir chat después de la animación
+        // No es necesario esperar con setTimeout si la clase 'hidden' se maneja por la visibilidad de la ventana
+        chatOpenButton.classList.remove('hidden');
     }
 
     chatOpenButton.addEventListener('click', openChat);
     chatCloseButton.addEventListener('click', closeChat);
 
-    function addMessageToChat(message, sender) {
+    function addMessageToChat(message, sender) { // Renombrada de addMessage a addMessageToChat para evitar conflicto si existiera otra
         const messageElement = document.createElement('div');
-        
-        if (sender === 'user') {
-            messageElement.classList.add('flex', 'justify-end', 'items-start', 'space-x-2', 'mb-4', 'opacity-0', 'transform', 'translate-x-4');
-            
+        messageElement.classList.add('flex', 'items-start', 'mb-4', 'opacity-0', 'translate-y-2');
+
+        if (sender === 'user') { // Cambiado isUser a sender === 'user'
+            messageElement.classList.add('justify-end');
             const contentElement = document.createElement('div');
-            contentElement.classList.add('bg-blue-600', 'text-white', 'p-3', 'rounded-lg', 'rounded-tr-none', 'shadow-md', 'break-words');
-            contentElement.style.maxWidth = 'calc(100% - 1rem)';
+            contentElement.classList.add('bg-white', 'text-blue-800', 'p-3', 'rounded-lg', 'rounded-tr-none', 'shadow-md', 'border', 'border-gray-200', 'break-words', 'max-w-[85%]');
             contentElement.textContent = message;
-            
             messageElement.appendChild(contentElement);
         } else { // bot
-            messageElement.classList.add('flex', 'items-start', 'space-x-2', 'mb-4', 'opacity-0', 'transform', 'translate-x-[-1rem]');
-            
-            const avatarElement = document.createElement('div');
-            avatarElement.classList.add('bg-yellow-400', 'rounded-full', 'p-2', 'mt-1', 'flex-shrink-0');
-            avatarElement.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-900">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                </svg>
-            `;
-            
             const contentElement = document.createElement('div');
-            contentElement.classList.add('bg-white', 'text-blue-900', 'p-3', 'rounded-lg', 'rounded-tl-none', 'shadow-md', 'border', 'border-gray-200', 'break-words');
-            contentElement.style.maxWidth = 'calc(100% - 3rem)';
+            contentElement.classList.add('bg-blue-600', 'text-white', 'p-3', 'rounded-lg', 'rounded-tl-none', 'shadow-md', 'break-words', 'max-w-[85%]');
             contentElement.textContent = message;
-            
-            messageElement.appendChild(avatarElement);
             messageElement.appendChild(contentElement);
         }
-        
+
         chatMessages.appendChild(messageElement);
-        
+
         // Animación de entrada para el mensaje
         setTimeout(() => {
-            messageElement.classList.add('transition-all', 'duration-300', 'opacity-100', 'translate-x-0');
+            messageElement.classList.remove('opacity-0', 'translate-y-2');
+            messageElement.classList.add('opacity-100', 'translate-y-0', 'transition-all', 'duration-300');
         }, 10);
-        
+
         chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
     }
 
     function getBotResponse(message) {
         const normalizedMessage = message.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        
+
         for (const [keyword, response] of Object.entries(responses)) {
             const normalizedKeyword = keyword.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             if (normalizedMessage.includes(normalizedKeyword)) {
                 return response;
             }
         }
-        
+
         return defaultResponse;
     }
 
@@ -363,6 +375,11 @@ document.addEventListener('DOMContentLoaded', function () {
             sendMessage();
         }
     });
+
+    // Inicialmente, la ventana de chat está oculta
+    if (chatWindow) { // Asegurarse que chatWindow existe
+        chatWindow.classList.add('hidden', 'scale-0', 'opacity-0');
+    }
 });
 </script>
 
