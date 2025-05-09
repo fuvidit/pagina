@@ -25,3 +25,13 @@ Route::post('/chat', [ChatController::class, 'handleMessage'])->name('chat');
 Route::get('/test-chat', function() {
     return response()->json(['message' => 'Test successful']);
 });
+
+// RUTAS PARA NOTICIAS
+Route::get('/noticias/crear', function() {
+    return view('noticias.crear');
+})->name('noticias.crear');
+Route::post('/guardar-noticia', [NewsController::class, 'store'])->name('noticias.store');
+Route::get('/noticia/{id}/editar', [NewsController::class, 'edit'])->name('prensa.editar');
+Route::put('/noticia/{id}', [NewsController::class, 'update'])->name('noticias.update');
+Route::delete('/noticia/{id}', [NewsController::class, 'destroy'])->name('noticias.destroy');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

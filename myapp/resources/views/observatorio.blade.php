@@ -113,6 +113,8 @@
 
     <x-footer />
 
+    <x-chat-widget />
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Script para inicializar gráficos con Chart.js -->

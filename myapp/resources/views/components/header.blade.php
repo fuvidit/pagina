@@ -9,20 +9,38 @@
         <!-- Menú normal (Desktop) -->
         <nav class="hidden lg:flex pr-10">
             <ul class="flex space-x-6 items-center">
-                <li><a href="/" class="nav-link">Inicio</a></li>
-                <li><a href="{{ route('nosotros') }}" class="nav-link">Nosotros</a></li>
-                <li><a href="{{ route('observatorio') }}" class="nav-link">Observatorio del CTI</a></li>
-                <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
-                <li><a href="#footer" class="nav-link">Contacto</a></li>
-
-            <li>
-                <a href="{{ route('login') }}"
-                    class="mt-1 bg-yellow-400 text-black font-bold text-base py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition inline-block">
-                    INICIAR SESIÓN
-                </a>
-            </li>
-
-
+                <li><a href="/" class="nav-link text-lg">Inicio</a></li>
+                <li><a href="{{ route('nosotros') }}" class="nav-link text-lg">Nosotros</a></li>
+                <li><a href="{{ route('observatorio') }}" class="nav-link text-lg">Observatorio del CTI</a></li>
+                <li class="relative group">
+                    <a href="{{ route('prensa') }}" class="nav-link text-lg flex items-center">
+                        Prensa
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+                    <div class="absolute left-0 mt-0 pt-2 w-56 z-50 dropdown-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                        <div class="bg-white rounded-lg shadow-lg py-2">
+                            @guest
+                            <a href="{{ route('login') }}" class="block px-4 py-2 text-[#001f6f] font-medium hover:bg-blue-50 transition text-base">
+                                Comunicaciones FUVIDIT
+                            </a>
+                            @endguest
+                            @auth
+                            <a href="{{ route('noticias.crear') }}" class="block px-4 py-2 text-[#001f6f] font-medium hover:bg-blue-50 transition text-base">
+                                <i class="bi bi-plus-circle mr-1"></i> Crear Noticia
+                            </a>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="block px-4 py-2 text-red-600 font-medium hover:bg-red-50 transition text-base">
+                                <i class="bi bi-box-arrow-right mr-1"></i> Cerrar Sesión
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                @csrf
+                            </form>
+                            @endauth
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#footer" class="nav-link text-lg scroll-smooth">Contacto</a></li>
                 <li>
                     <img class="atomo w-10" src="{{ asset('images/atomo.png') }}" alt="Átomo">
                 </li>
@@ -46,17 +64,29 @@
         <button id="close-menu" class="text-2xl text-gray-500">&times;</button>
     </div>
     <ul class="p-6 space-y-4">
-        <li><a href="{{ route('inicio') }}" class="nav-link">Inicio</a></li>
-        <li><a href="{{ route('nosotros') }}" class="nav-link">Nosotros</a></li>
-        <li><a href="{{ route('observatorio') }}" class="nav-link">Observatorio del CTI</a></li>
-        <li><a href="{{ route('prensa') }}" class="nav-link">Prensa</a></li>
-        <li><a href="#footer" class="nav-link">Contacto</a></li>
+        <li><a href="{{ route('inicio') }}" class="nav-link text-base">Inicio</a></li>
+        <li><a href="{{ route('nosotros') }}" class="nav-link text-base">Nosotros</a></li>
+        <li><a href="{{ route('observatorio') }}" class="nav-link text-base">Observatorio del CTI</a></li>
         <li>
-            <button type="button"
-                class="bg-yellow-400 text-black font-bold text-lg py-2 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition">
-                INICIAR SESIÓN
-            </button>
+            <div class="space-y-2">
+                <a href="{{ route('prensa') }}" class="nav-link block text-base">Prensa</a>
+                <a href="{{ route('login') }}" class="block ml-4 text-sm text-[#001f6f] font-medium hover:text-blue-500">
+                    Comunicaciones FUVIDIT
+                </a>
+                @auth
+                <a href="{{ route('noticias.crear') }}" class="block ml-4 text-sm text-[#001f6f] font-medium hover:text-blue-500">
+                    <i class="bi bi-plus-circle mr-1"></i> Crear Noticia
+                </a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-mobile-form').submit();" class="block ml-4 text-sm text-red-600 font-medium hover:text-red-500">
+                    <i class="bi bi-box-arrow-right mr-1"></i> Cerrar Sesión
+                </a>
+                <form id="logout-mobile-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                    @csrf
+                </form>
+                @endauth
+            </div>
         </li>
+        <li><a href="#footer" class="nav-link text-base scroll-smooth">Contacto</a></li>
     </ul>
 </div>
 
@@ -84,6 +114,35 @@ document.addEventListener('DOMContentLoaded', function() {
     menuButton.addEventListener('click', openMenu);
     closeButton.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
+    
+    // Animación de desplazamiento suave para enlaces de anclaje
+    document.querySelectorAll('.scroll-smooth').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Cerrar el menú móvil si está abierto
+                if (menu.classList.contains('-translate-x-full') === false) {
+                    closeMenu();
+                }
+                
+                // Animación de desplazamiento suave
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Efecto de resaltado temporal en el footer
+                targetElement.classList.add('highlight-section');
+                setTimeout(() => {
+                    targetElement.classList.remove('highlight-section');
+                }, 1500);
+            }
+        });
+    });
 });
 </script>
 
@@ -111,10 +170,36 @@ document.addEventListener('DOMContentLoaded', function() {
 .nav-link:hover::after {
     transform: scaleX(1);
 }
+
+/* Animación para el menú desplegable */
+.dropdown-menu {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    pointer-events: none;
+}
+
+.group:hover .dropdown-menu {
+    pointer-events: auto;
+}
+
+/* Animación para resaltar la sección del footer */
+@keyframes highlight {
+    0% { background-color: transparent; }
+    30% { background-color: rgba(0, 133, 254, 0.1); }
+    100% { background-color: transparent; }
+}
+
+.highlight-section {
+    animation: highlight 1.5s ease-in-out;
+}
+
+/* Asegurar comportamiento de desplazamiento suave para toda la página */
+html {
+    scroll-behavior: smooth;
+}
 </style>
 
 <script>
-
             const image = document.querySelector('.atomo');
 
             function rotate() {
@@ -124,5 +209,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let angle = 0;
             rotate();
-
 </script>
