@@ -135,11 +135,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
                 
-                // Efecto de resaltado temporal en el footer
-                targetElement.classList.add('highlight-section');
-                setTimeout(() => {
-                    targetElement.classList.remove('highlight-section');
-                }, 1500);
+                // Comentamos o eliminamos el efecto de resaltado temporal
+                // targetElement.classList.add('highlight-section');
+                // setTimeout(() => {
+                //     targetElement.classList.remove('highlight-section');
+                // }, 1500);
             }
         });
     });
@@ -185,12 +185,13 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Animación para resaltar la sección del footer */
 @keyframes highlight {
     0% { background-color: transparent; }
-    30% { background-color: rgba(0, 133, 254, 0.1); }
+    30% { background-color: transparent; }
     100% { background-color: transparent; }
 }
 
 .highlight-section {
-    animation: highlight 1.5s ease-in-out;
+    /* Eliminamos la animación por completo */
+    /* animation: highlight 1.5s ease-in-out; */
 }
 
 /* Asegurar comportamiento de desplazamiento suave para toda la página */

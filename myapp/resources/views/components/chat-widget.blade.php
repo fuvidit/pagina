@@ -5,7 +5,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
         </svg>
-        <span>Prueba nuestro chatbot!</span>
+        <span>Habla con Fuvi!</span>
     </button>
 
     {{-- Chat Window --}}
@@ -13,7 +13,7 @@
         {{-- Chat Header --}}
         <div class="p-4 bg-blue-600 text-white rounded-t-2xl flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <h3 class="font-bold text-lg">FUVI</h3>
+                <h3 class="font-bold text-lg">Fuvi</h3>
             </div>
             <button id="chat-close-button" class="bg-white text-blue-600 p-1.5 rounded-full hover:bg-blue-100 transition transform hover:rotate-90 duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -27,7 +27,7 @@
             {{-- Example Bot Message --}}
             <div class="flex items-start mb-4">
                 <div class="bg-blue-600 text-white p-3 rounded-lg rounded-tl-none shadow-md break-words max-w-[85%]">
-                    <p class="text-sm">¡Hola! Soy FUVI. ¿En qué puedo ayudarte hoy?</p>
+                    <p class="text-sm">¡Hola! Soy Fuvi. ¿En qué puedo ayudarte hoy?</p>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function addMessage(text, isUser = false) {
         const messageDiv = document.createElement('div');
         messageDiv.className = 'flex items-start mb-4';
-        
+
         if (isUser) {
             messageDiv.className += ' justify-end';
             messageDiv.innerHTML = `
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
         }
-        
+
         chatMessages.appendChild(messageDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -134,16 +134,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function processUserInput() {
         const userInput = chatInput.value.trim().toLowerCase();
         if (userInput === '') return;
-        
+
         // Agregar mensaje del usuario
         addMessage(chatInput.value, true);
-        
+
         // Limpiar el input
         chatInput.value = '';
-        
+
         // Buscar respuesta
         let botResponse = defaultResponse;
-        
+
         // Verificar si alguna palabra clave está en la entrada del usuario
         for (const keyword in responses) {
             if (userInput.includes(keyword)) {
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
             }
         }
-        
+
         // Agregar respuesta del bot después de un pequeño retraso
         setTimeout(() => {
             addMessage(botResponse);
@@ -161,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listeners
     chatOpenButton.addEventListener('click', openChat);
     chatCloseButton.addEventListener('click', closeChat);
-    
+
     chatSendButton.addEventListener('click', processUserInput);
-    
+
     chatInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             processUserInput();

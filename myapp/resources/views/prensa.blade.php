@@ -88,6 +88,8 @@
 
 <x-footer />
 
+<x-chat-widget />
+
 </body>
 
 </html>
