@@ -63,7 +63,7 @@
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
         {{-- Asumiendo que 'imagen' guarda la ruta relativa dentro de 'storage/app/public' --}}
         {{-- Asegúrate de haber ejecutado 'php artisan storage:link' --}}
-        <img src="{{ asset('storage/' . $noticia->imagen) }}" alt="Imagen de {{ $noticia->titulo }}" class="w-full h-40 object-cover"> {{-- <-- Usando 'imagen' --}}
+        <img src="{{ asset('storage/' . $noticia->image) }}" alt="Imagen de {{ $noticia->titulo }}" class="w-full h-40 object-cover"> {{-- <-- Usando 'imagen' --}}
 
         <div class="p-4 text-left">
           <h3 class="text-xs font-semibold text-gray-500 uppercase mb-1">NOTICIAS FUVIDIT</h3>
@@ -73,7 +73,7 @@
           {{-- Puedes añadir un enlace a la noticia completa si lo tienes --}}
           {{-- <a href="{{ route('noticia.show', $noticia->id) }}" class="text-blue-600 hover:underline">Leer más</a> --}}
           {{-- O mantener el icono si es relevante --}}
-          <img src="/images/instagram.png" alt="Logo" class="w-6">
+          <a href="{{ $noticia->link }}"><img src="/images/instagram.png" alt="Instagram" class="w-8"></a>
         </div>
       </div>
     @endforeach
