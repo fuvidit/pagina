@@ -47,7 +47,7 @@ class NewsController extends Controller
         public function edit($id)
         {
             $noticia = Noticia::findOrFail($id);
-            return view('prensa.editar', compact('noticia'));
+            return view('noticias.editar', compact('noticia'));
         }
 
         // Actualizar la noticia
@@ -75,7 +75,7 @@ class NewsController extends Controller
 
             $noticia->save();
 
-            return redirect()->route('prensa.editar', $id)->with('success', 'Noticia actualizada correctamente.');
+            return redirect()->route('noticias.editar', $id)->with('success', 'Noticia actualizada correctamente.');
 
         }
 
@@ -90,12 +90,10 @@ class NewsController extends Controller
 
         public function inicio()
         {
-            // Obtener las últimas 4 noticias ordenadas por fecha de publicación
-            $noticias = Noticia::latest()->take(4)->get(); // Obtener todas las imágenes
+            // Obtener las últimas 3 noticias ordenadas por fecha de publicación
+            $noticias = Noticia::latest()->take(3)->get(); // Cambiado de 4 a 3 noticias
 
             // Pasar las noticias a la vista
-            return view('index', compact('noticias'));
+            return view('welcome', compact('noticias'));
         }
-
-
 }

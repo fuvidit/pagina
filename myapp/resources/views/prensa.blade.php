@@ -70,10 +70,29 @@
           {{-- Accedemos a las propiedades del objeto $noticia --}}
           <h4 class="text-md font-bold text-blue-900 mb-2 uppercase">{{ $noticia->titulo }}</h4>
           <p class="text-sm text-gray-600 mb-4">{{ $noticia->descripcion }}</p>
-          {{-- Puedes añadir un enlace a la noticia completa si lo tienes --}}
-          {{-- <a href="{{ route('noticia.show', $noticia->id) }}" class="text-blue-600 hover:underline">Leer más</a> --}}
-          {{-- O mantener el icono si es relevante --}}
-          <a href="{{ $noticia->link }}"><img src="/images/instagram.png" alt="Instagram" class="w-8"></a>
+          {{-- Mostrar el icono de Instagram solo si hay un enlace --}}
+          @if($noticia->link)
+            <a href="{{ $noticia->link }}" target="_blank" rel="noopener noreferrer">
+              <img src="/images/instagram.png" alt="Logo Instagram" class="w-6">
+            </a>
+          @endif
+          
+          @auth
+          {{-- Botones de edición y eliminación --}}
+          <div class="mt-4 flex space-x-2">
+            <a href="{{ route('noticias.editar', $noticia->id) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-md text-sm transition duration-300">
+              Editar
+            </a>
+            
+            <form action="{{ route('noticias.destroy', $noticia->id) }}" method="POST" class="inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md text-sm transition duration-300" onclick="return confirm('¿Estás seguro de que deseas eliminar esta noticia?')">
+                Eliminar
+              </button>
+            </form>
+          </div>
+          @endauth
         </div>
       </div>
     @endforeach
@@ -87,8 +106,6 @@
 {{-- Eliminamos la barra divisora y la sección duplicada de noticias --}}
 
 <x-footer />
-
-<x-chat-widget />
 
 </body>
 

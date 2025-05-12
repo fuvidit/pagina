@@ -7,9 +7,7 @@ use App\Http\Controllers\ObservatorioController;
 use App\Http\Controllers\ChatController;
 
 // RUTA PRINCIPAL
-Route::get('/', function () {
-    return view('welcome');
-})->name('inicio');
+Route::get('/',[NewsController::class, 'inicio'])->name('inicio');
 
 // OTRAS VISTAS
 Route::get('/prensa', [NewsController::class, 'index'])->name('prensa');
@@ -31,7 +29,7 @@ Route::get('/noticias/crear', function() {
     return view('noticias.crear');
 })->name('noticias.crear');
 Route::post('/guardar-noticia', [NewsController::class, 'store'])->name('noticias.store');
-Route::get('/noticia/{id}/editar', [NewsController::class, 'edit'])->name('prensa.editar');
+Route::get('/noticia/{id}/editar', [NewsController::class, 'edit'])->name('noticias.editar');
 Route::put('/noticia/{id}', [NewsController::class, 'update'])->name('noticias.update');
 Route::delete('/noticia/{id}', [NewsController::class, 'destroy'])->name('noticias.destroy');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

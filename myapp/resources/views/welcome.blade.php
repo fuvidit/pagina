@@ -198,13 +198,17 @@
     <h2 class="text-4xl md:text-6xl font-bold text-center text-blue-900 mb-16">
         ¿QUIÉNES SOMOS?
     </h2>
-    <div class="flex flex-col md:flex-row gap-17 text-xl md:text-2xl text-justify leading-relaxed">
-        <p class="md:w-1/2">
-            Somos: <strong class="text-red-700">Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
-        </p>
-        <p class="md:w-1/2">
-            En el <strong class="text-red-700">Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong class="text-red-700">UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong class="text-red-700">FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
-        </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl md:text-2xl text-justify leading-relaxed">
+        <div>
+            <p>
+                Somos: <strong class="text-red-700">Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
+            </p>
+        </div>
+        <div>
+            <p>
+                En el <strong class="text-red-700">Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong class="text-red-700">UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong class="text-red-700">FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
+            </p>
+        </div>
     </div>
 </div>
 
@@ -216,7 +220,60 @@
 <div class="md:mt-[150px] h-1 w-full bg-gradient-to-r from-blue-600 via-yellow-500 to-red-600 my-10 rounded-full"></div>
 
 
-<x-card />
+<div class="text-center py-8 md:mt-15">
+    <h2 class="text-2xl md:text-6xl font-bold text-blue-900 uppercase mb-12">
+      DESCUBRE MÁS SOBRE <span class="text-blue-600">NOSOTROS</span>
+    </h2>
+  
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 max-w-6xl mx-auto">
+      @if ($noticias->isNotEmpty())
+  
+      {{-- Iteramos sobre las noticias pasadas desde el controlador --}}
+      @foreach($noticias as $noticia)
+        <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
+          {{-- Asumiendo que 'imagen' guarda la ruta relativa dentro de 'storage/app/public' --}}
+          {{-- Asegúrate de haber ejecutado 'php artisan storage:link' --}}
+          <img src="{{ asset('storage/' . $noticia->image) }}" alt="Imagen de {{ $noticia->titulo }}" class="w-full h-40 object-cover"> {{-- <-- Usando 'imagen' --}}
+  
+          <div class="p-4 text-left">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase mb-1">NOTICIAS FUVIDIT</h3>
+            {{-- Accedemos a las propiedades del objeto $noticia --}}
+            <h4 class="text-md font-bold text-blue-900 mb-2 uppercase">{{ $noticia->titulo }}</h4>
+            <p class="text-sm text-gray-600 mb-4">{{ $noticia->descripcion }}</p>
+            {{-- Mostrar el icono de Instagram solo si hay un enlace --}}
+            @if($noticia->link)
+              <a href="{{ $noticia->link }}" target="_blank" rel="noopener noreferrer">
+                <img src="/images/instagram.png" alt="Logo Instagram" class="w-6">
+              </a>
+            @endif
+            
+            @auth
+            {{-- Botones de edición y eliminación --}}
+            <div class="mt-4 flex space-x-2">
+              <a href="{{ route('noticias.editar', $noticia->id) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-md text-sm transition duration-300">
+                Editar
+              </a>
+              
+              <form action="{{ route('noticias.destroy', $noticia->id) }}" method="POST" class="inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-md text-sm transition duration-300" onclick="return confirm('¿Estás seguro de que deseas eliminar esta noticia?')">
+                  Eliminar
+                </button>
+              </form>
+            </div>
+            @endauth
+          </div>
+        </div>
+      @endforeach
+      @else
+          {{-- Mensaje si no hay noticias --}}
+          <p class="text-gray-600 col-span-full">No hay noticias disponibles en este momento.</p>
+      @endif
+    </div>
+  </div>
+</div>
 
 <x-map />
 
