@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -106,6 +106,8 @@
 {{-- Eliminamos la barra divisora y la sección duplicada de noticias --}}
 
 <x-footer />
+
+<x-chat-widget />
 
 </body>
 

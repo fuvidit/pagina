@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', 'ubuntu', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+.swiper {
+    width: 100%;
+    height: auto;
+    max-width: 100/* Ajusta el ancho del carrusel */
+
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 1vw;
+    overflow: hidden; /* Evita que la imagen se salga */
+}
+
+.swiper-slide img {
+    width: 65%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.bg-custom-gradient {
+    background: linear-gradient(to bottom right, #001f6f, #0054d0); /* Azul oscuro a azul claro */
+}
+
+
