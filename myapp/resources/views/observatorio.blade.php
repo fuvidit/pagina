@@ -59,7 +59,7 @@
                 <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                     <div class="flex justify-center">
                         <div class="relative w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
-                            <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#3f3c37 0% 100%, transparent 100% 100%); clip-path: circle(50%)"></div>
+                            <div class="absolute inset-0 rounded-full" style="background: conic-gradient(#8F8F8F 0% 100%, transparent 100% 100%); clip-path: circle(50%)"></div>
                             <span class="relative z-10 text-2xl font-bold text-white">234</span>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
             data: {
                 datasets: [{
                     data: [109, 26, 16, 43],
-                    backgroundColor: ['#3f3c37','#f4af36','#42528d','#b9322c'],
+                    backgroundColor: ['#8F8F8F','#f4af36','#42528d','#b9322c'],
                     borderWidth: 1,
                     borderColor: '#fff'
                 }],
@@ -215,7 +215,7 @@
             data: {
                 datasets: [{
                     data: [9, 5, 2, 4],
-                    backgroundColor: ['#3f3c37','#f4af36','#42528d','#b9322c'],
+                    backgroundColor: ['#8F8F8F','#f4af36','#42528d','#b9322c'],
                     borderWidth: 1,
                     borderColor: '#fff'
                 }],
@@ -256,7 +256,7 @@
                 datasets: [{
                     label: 'Proyectos',
                     data: [4, 28, 16, 10, 15, 11, 3, 8, 14],
-                    backgroundColor: '#3f3c37',
+                    backgroundColor: '#8F8F8F',
                     barPercentage: 0.6
                 }],
                 labels: ['INFERCA', 'METRO DE CARACAS', 'IFE', 'METRO LOS TEQUES', 'METRO VALENCIA', 'METRO DE MARACAIBO', 'TROMERCA', 'FERROLASA', 'FERROVEN']
@@ -371,7 +371,7 @@
                     label: 'Proyectos Culminados',
                     data: [2, 6, 1, 1, 2, 2, 1, 1, 1, 2, 1],
                     backgroundColor: [
-                        '#3f3c37','#3f3c37','#3f3c37',
+                        '#8F8F8F','#8F8F8F','#8F8F8F',
                         '#f4af36','#f4af36','#f4af36',
                         '#42528d','#42528d',
                         '#b9322c','#b9322c','#b9322c'
