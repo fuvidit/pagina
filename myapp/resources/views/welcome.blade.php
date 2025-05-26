@@ -85,7 +85,7 @@
 
 <x-header />
 
-<div class="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] bg-cover bg-center" style="background-image: url('../images/sala.jpg');">
+<div class="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] bg-cover bg-center" style="background-image: url('../images/sisisi.jpg');">
   <!-- Capa de fondo oscura -->
   <div class="absolute inset-0 bg-black bg-opacity-75"></div>
 
