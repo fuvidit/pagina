@@ -2,7 +2,7 @@
 <div id="chat-widget-container" class="fixed bottom-[-12px] right-[5%] z-50 w-[8%] transition-opacity duration-300">
     {{-- Chat Button --}}
     <button id="chat-open-button" class="text-white p-3 rounded-full transition focus:outline-none flex items-center space-x-2 transform hover:scale-110 transition-all duration-300">
-        <img src="{{ asset('images/einstein.png') }}" height="20px" >
+        <img id="chat-bot-image" src="{{ asset('images/hfmchatbot.gif') }}" height="20px">
         <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
         </svg>
     </button>
@@ -211,5 +211,17 @@
         });
         // --- FIN Lógica del Chatbot ---
 
+        // Lógica para reproducir el GIF cada 20 segundos
+        const chatBotImage = document.getElementById('chat-bot-image');
+        const gifSrc = '{{ asset('images/hfmchatbot.gif') }}';
+
+        function playGif() {
+            // Al asignar la misma URL, el navegador reinicia la reproducción del GIF
+            chatBotImage.src = gifSrc + '?' + new Date().getTime(); // Añadir un timestamp para forzar la recarga
+        }
+
+        // Reproducir el GIF inicialmente y luego cada 20 segundos
+        playGif(); // Reproducir al cargar la página
+        setInterval(playGif, 20000); // Reproducir cada 20 segundos (20000 ms)
     });
 </script>
