@@ -1,11 +1,7 @@
 {{-- Chat Widget Component --}}
 <div id="chat-widget-container" class="fixed bottom-[-12px] right-[5%] z-50 w-[8%] transition-opacity duration-300">
     {{-- Chat Button --}}
-    <button id="chat-open-button" class="text-white p-3 rounded-full transition focus:outline-none flex items-center space-x-2 transform hover:scale-110 transition-all duration-300">
-        <img id="chat-bot-image" src="{{ asset('images/hfmchatbot.gif') }}" height="20px">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-        </svg>
-    </button>
+    <img id="chat-bot-image" src="{{ asset('images/hfmchatbot.gif') }}" height="20px" class="cursor-pointer transform hover:scale-110 transition-all duration-300">
 
     {{-- Chat Window (Este también tiene sus propias transiciones que están bien) --}}
     <div id="chat-widget" class="fixed bottom-5 right-5 w-80 md:w-96 bg-white rounded-2xl shadow-xl transform scale-0 opacity-0 origin-bottom-right transition-all duration-300 z-50 flex flex-col" style="height: 450px; max-height: 80vh;">
@@ -71,12 +67,12 @@
 
 
         // --- Lógica del Chatbot ---
-        const chatOpenButton = document.getElementById('chat-open-button');
         const chatCloseButton = document.getElementById('chat-close-button');
         const chatWindow = document.getElementById('chat-widget');
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
         const chatSendButton = document.getElementById('chat-send-button');
+        const chatBotImage = document.getElementById('chat-bot-image');
 
         // Respuestas predefinidas
         const responses = {
@@ -121,7 +117,35 @@
             'encargan' : 'La FUVIDIT se encarga de gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional, a través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.',
             'encarga' : 'La FUVIDIT se encarga de gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional, a través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.',
             'ministro de transporte' : 'Ramón Celestino Velásquez Araguayán',
-            'primer' : 'El primer presidente de la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT) fue Ludwig Antonio Vera Rojas, nombrado en condición de Encargado. Este nombramiento se realizó mediante el Decreto N° 3.910. '
+            'primer' : 'El primer presidente de la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT) fue Ludwig Antonio Vera Rojas, nombrado en condición de Encargado. Este nombramiento se realizó mediante el Decreto N° 3.910. ',
+            'humberto fernandez moran' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernández morán' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernandez morán' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernández moran' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'ivic' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'Instituto Venezolano de Investigaciones Científicas' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'instituto venezolano de investigaciones cientificas' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'Gabriela Servilia Jiménez Ramírez' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.',
+            'vicepresidenta' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.',
+            'gabriela sevilia jimenez ramirez' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.',
+            'mision' : 'La misión de la FUVIDIT es promover y desarrollar actividades de investigación, desarrollo e innovación en el sector transporte, contribuyendo al avance científico y tecnológico del país.',
+            'misión' : 'La misión de la FUVIDIT es promover y desarrollar actividades de investigación, desarrollo e innovación en el sector transporte, contribuyendo al avance científico y tecnológico del país.',
+            'valores' : 'Nuestros valores se centran en la excelencia, la innovación, el compromiso social, la ética y la transparencia en todas nuestras actividades.',
+            'proyectos' : 'La FUVIDIT desarrolla proyectos de investigación e innovación en diversas áreas del transporte, buscando soluciones sostenibles y eficientes. Puedes encontrar más detalles en la sección de "Observatorio" o "Prensa" de nuestra página web.',
+            'noticias' : 'Puedes encontrar las últimas noticias y comunicados de prensa en la sección de "Prensa" de nuestra página web.',
+            'eventos' : 'Para información sobre próximos eventos, talleres o conferencias, te invitamos a revisar nuestra sección de "Prensa" o seguirnos en nuestras redes sociales.',
+            'quienes somos' : 'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
+            'quiénes somos' : 'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
+            'humberto fernandez moran' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernández morán' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernandez morán' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'humberto fernández moran' : 'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+            'ivic' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'Instituto Venezolano de Investigaciones Científicas' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'instituto venezolano de investigaciones cientificas' : 'El Instituto Venezolano de Investigaciones Científicas (IVIC) es un organismo autónomo adscrito al Ministerio del Poder Popular para Ciencia y Tecnología de la República Bolivariana de Venezuela. Se considera el principal instituto de investigación pública en Venezuela y es un referente en la investigación científica en el país.',
+            'Gabriela Servilia Jiménez Ramírez' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.',
+            'vicepresidenta' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.',
+            'gabriela sevilia jimenez ramirez' : 'La Dra. Gabriela Servilia Jiménez Ramírez es una destacada bióloga y política venezolana que ocupa importantes cargos en el gobierno actual.\nDesde el 20 de junio de 2022, se desempeña como Vicepresidenta Sectorial de Ciencia, Tecnología, Educación y Salud de Venezuela. Además, es la Ministra del Poder Popular para Ciencia y Tecnología desde el 6 de junio de 2019.\nTrayectoria y formación:\n- Es Licenciada y Magíster en Biología por la Universidad Central de Venezuela (UCV).\n- Ha ocupado otros cargos relevantes, como presidenta encargada de la Corporación para el Desarrollo Científico y Tecnológico (Codecyt).\n- En enero de 2020, fue designada presidenta de la Compañía Anónima Nacional Teléfonos de Venezuela (CANTV).\n- Ha impulsado iniciativas como la creación del Consejo Nacional de Ciberseguridad y el desarrollo de software libre en Venezuela.\n- Ha sido una activa promotora de la participación de la mujer en la ciencia, destacando que un alto porcentaje de proyectos científicos financiados en Venezuela son liderados por mujeres.\n- La Dra. Jiménez Ramírez ha enfatizado la importancia de la ciencia para el desarrollo del país, la soberanía nacional y la mejora de la calidad de vida de los venezolanos, abordando áreas como la salud, la educación, la ciberseguridad, la nanotecnología y la biotecnología.'
         };
 
         const defaultResponse = 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "objetivo", "contacto", "ubicación", "presidente" o "creación"?';
@@ -134,14 +158,16 @@
             chatWidgetContainer.classList.remove('opacity-0', 'pointer-events-none'); // Asegura que el contenedor esté visible y activo
             chatWindow.classList.remove('hidden', 'scale-0', 'opacity-0');
             chatWindow.classList.add('scale-100', 'opacity-100');
-            chatOpenButton.classList.add('hidden');
+            // Ocultar el GIF cuando el chat está abierto
+            chatBotImage.classList.add('hidden');
         }
 
         // Función para animar el cierre del chat
         function closeChat() {
             chatWindow.classList.remove('scale-100', 'opacity-100');
             chatWindow.classList.add('scale-0', 'opacity-0');
-            chatOpenButton.classList.remove('hidden');
+            // Mostrar el GIF cuando el chat está cerrado
+            chatBotImage.classList.remove('hidden');
             // Aquí NO ocultamos el chatWidgetContainer, ya que su visibilidad la controla el scroll.
             // Si el scroll está cerca del footer, se ocultará automáticamente.
         }
@@ -199,7 +225,7 @@
         }
 
         // Event listeners
-        chatOpenButton.addEventListener('click', openChat);
+        chatBotImage.addEventListener('click', openChat);
         chatCloseButton.addEventListener('click', closeChat);
 
         chatSendButton.addEventListener('click', processUserInput);
@@ -212,7 +238,6 @@
         // --- FIN Lógica del Chatbot ---
 
         // Lógica para reproducir el GIF cada 20 segundos
-        const chatBotImage = document.getElementById('chat-bot-image');
         const gifSrc = '{{ asset('images/hfmchatbot.gif') }}';
 
         function playGif() {
@@ -225,3 +250,4 @@
         setInterval(playGif, 20000); // Reproducir cada 20 segundos (20000 ms)
     });
 </script>
+
