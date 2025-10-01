@@ -1,7 +1,7 @@
 {{-- Chat Widget Component --}}
-<div id="chat-widget-container" class="fixed bottom-[-12px] right-[5%] z-50 w-[8%] transition-opacity duration-300">
+<div id="chat-widget-container" class="fixed bottom-[-12px] right-[5%] z-50 w-60 md:w-[8%] transition-opacity duration-300">
     {{-- Chat Button --}}
-    <img id="chat-bot-image" src="{{ asset('images/hfmchatbot.gif') }}" height="20px" class="cursor-pointer transform hover:scale-110 transition-all duration-300">
+    <img id="chat-bot-image" src="{{ asset('images/hfmchatbot.gif') }}" class="w-full h-auto cursor-pointer transform hover:scale-110 transition-all duration-300">
 
     {{-- Chat Window (Este también tiene sus propias transiciones que están bien) --}}
     <div id="chat-widget" class="fixed bottom-5 right-5 w-80 md:w-96 bg-white rounded-2xl shadow-xl transform scale-0 opacity-0 origin-bottom-right transition-all duration-300 z-50 flex flex-col" style="height: 450px; max-height: 80vh;">

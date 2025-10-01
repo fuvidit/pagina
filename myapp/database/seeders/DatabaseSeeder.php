@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Administrador',
-            'email' => 'admin@fuvidit.com',
-            'password' =>  bcrypt('fuvidit123.')  
+            'name' => 'Paola Yepez',
+            'email' => 'comunicaciones@fuvidit.com',
+            'password' =>  bcrypt('fuvidit123')  
         ]);
     }
 }
