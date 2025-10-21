@@ -1,12 +1,22 @@
-<div class="md:mt-10 bg-[#001f6f] text-white flex flex-col md:flex-row items-center justify-center m-4 p-6 rounded-lg">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="md:mt-10 bg-[#001f6f] text-white flex flex-col md:flex-row items-center justify-center m-4 p-6 rounded-lg">
 
     <!-- Columna de texto -->
-    <div class="w-full text-center md:w-1/3 md:text-left">
-      <h3 class="mb-4 text-3xl font-bold text-center sm:text-4xl md:text-5xl md:text-left">
+    <div class="w-full md:w-1/3 text-center md:text-left">
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center md:text-left">
         ¿DÓNDE UBICARNOS?
       </h3> <br>
 
-      <p class="mb-4 text-base md:text-xl">
+      <p class="text-base md:text-xl mb-4">
         Encuentra nuestra ubicación exacta en el mapa interactivo.
       </p>
     </div>
@@ -22,9 +32,13 @@
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="w-full h-full rounded-lg shadow-lg">
+          class="rounded-lg shadow-lg w-full h-full">
         </iframe>
       </div>
     </div>
   </div>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</body>
+</html>
 

@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
-    <title>Inicio</title>
+    <title>FUVIDIT</title>
 
     <!-- Vincula tu archivo de Tailwind CSS aquí -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Splide CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
     <style>
         /* Estilo para el efecto de sombra en las imágenes */
@@ -85,7 +82,7 @@
 
 <x-header />
 
-<div class="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] bg-cover bg-center" style="background-image: url('../images/sisisi.jpg');">
+<div class="relative w-full h-[500px] sm:h-[600px] lg:h-[700px] bg-cover bg-center" style="background-image: url('{{ asset('images/sisisi.jpg') }}');">
   <!-- Capa de fondo oscura -->
   <div class="absolute inset-0 bg-black bg-opacity-75"></div>
 
@@ -201,12 +198,12 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl md:text-2xl text-justify leading-relaxed">
         <div>
             <p>
-                Somos: <strong class="text-red-700">Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la Gran Misión Transporte Venezuela.
+                Somos <strong class="text-red-700">Innovación, Investigación y Desarrollo</strong>. Gestionamos proyectos que impulsan la soberanía tecnológica e industrial del transporte multimodal. En febrero de 2019 se crea la <strong class="text-red-700">Gran Misión Transporte Venezuela</strong>.
             </p>
         </div>
         <div>
             <p>
-                En el <strong class="text-red-700">Quinto Vertice</strong>, que es el eje científico y académico de la gran misión, se crean dos entes: la <strong class="text-red-700">UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong class="text-red-700">FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
+                En el <strong class="text-red-700">Quinto Vértice</strong>, que es el eje científico y académico de la <strong class="text-red-700"> Gran Misión Transporte Venezuela </strong>, se crean dos entes: la <strong class="text-red-700">UNETRANS</strong>, Universidad Nacional Experimental del Transporte, y la <strong class="text-red-700">FUVIDIT</strong>, que es la Fundación Venezolana de Investigación, Desarrollo e Innovación para el transporte.
             </p>
         </div>
     </div>
@@ -244,7 +241,7 @@
             {{-- Mostrar el icono de Instagram solo si hay un enlace --}}
             @if($noticia->link)
               <a href="{{ $noticia->link }}" target="_blank" rel="noopener noreferrer">
-                <img src="/images/instagram.png" alt="Logo Instagram" class="w-6">
+                <img src="{{ asset('images/instagram.png') }}" alt="Logo Instagram" class="w-6">
               </a>
             @endif
 
@@ -284,53 +281,7 @@
 
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-<!-- Splide JS -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
-<!-- Inicializar Splide -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Pequeño retraso para asegurar que todos los elementos estén cargados
-    setTimeout(function() {
-      try {
-        var splideElement = document.querySelector('.splide');
-        if (splideElement) {
-          new Splide('.splide', {
-            type: 'loop',
-            perPage: 5,
-            perMove: 5,
-            gap: '0.5rem',
-            autoplay: true,
-            interval: 4000,
-            speed: 1000,
-            pauseOnHover: true,
-            arrows: true,
-            pagination: false,
-            breakpoints: {
-              1024: {
-                perPage: 5,
-                gap: '1rem', // Corregido
-              },
-              768: {
-                perPage: 2,
-                gap: '0.75rem',
-              },
-              480: {
-                perPage: 1,
-                gap: '0.5rem',
-              }
-            }
-          }).mount();
-          console.log('Carrusel inicializado correctamente');
-        } else {
-          console.warn('Elemento del carrusel no encontrado');
-        }
-      } catch (error) {
-        console.error('Error al inicializar el carrusel:', error);
-      }
-    }, 100); // Pequeño retraso de 100ms
-  });
-</script>
 
 </body>
 </html>

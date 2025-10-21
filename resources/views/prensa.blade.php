@@ -16,10 +16,9 @@
 
 <x-header />
 
-<body class="bg-gray-50">
 
 
-<div class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] bg-cover bg-center" style="background-image: url('../images/prensa.jpg');">
+<div class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] bg-cover bg-center mt-[-64px]" style="background-image: url('../images/prensa.jpg');">
   <!-- Capa oscura -->
   <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
@@ -76,14 +75,14 @@
               <img src="/images/instagram.png" alt="Logo Instagram" class="w-6">
             </a>
           @endif
-          
+
           @auth
           {{-- Botones de edición y eliminación --}}
           <div class="mt-4 flex space-x-2">
             <a href="{{ route('noticias.editar', $noticia->id) }}" class="bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded-md text-sm transition duration-300">
               Editar
             </a>
-            
+
             <form action="{{ route('noticias.destroy', $noticia->id) }}" method="POST" class="inline">
               @csrf
               @method('DELETE')

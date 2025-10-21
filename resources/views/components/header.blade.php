@@ -1,8 +1,10 @@
-<header class="bg-white p-7 relative z-30">
-    <div class="flex justify-between items-center">
+<header class="bg-white p-2 relative z-30">
+  <img src="../images/cintillo_nuevo.jpg" alt="cintillo" width="600" class="m-5">
+<hr>
+    <div class="flex p-2 justify-between items-center">
         <div>
             <a href="{{ route('inicio') }}"> <!-- Enlace añadido -->
-                <img src="../images/logo.png" alt="Logo" class="w-32 pt-2">
+                <img src="../images/logo.png" alt="Logo" class="w-36 pt-2">
             </a> <!-- Cierre del enlace -->
         </div>
 
@@ -11,7 +13,20 @@
             <ul class="flex space-x-6 items-center">
                 <li><a href="/" class="nav-link text-lg">Inicio</a></li>
                 <li><a href="{{ route('nosotros') }}" class="nav-link text-lg">Nosotros</a></li>
-                <li><a href="{{ route('observatorio') }}" class="nav-link text-lg">Observatorio del CTI</a></li>
+
+        <li class="relative group">
+                    <a href="{{ route('observatorio') }}" class="nav-link text-lg flex items-center">Observatorio del CTI
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </a>
+			<div class="absolute left-0 mt-0 pt-2 w-56 z-50 dropdown-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                        <div class="bg-white rounded-lg shadow-lg py-2">
+ 			<a href="https://sigesp5v.fuvidit.com.ve" class="block px-4 py-2 text-[#001f6f] font-medium hover:bg-blue-50 transition text-base">
+                               Sistema Quinto Vértice
+                            </a>
+
+
                 <li class="relative group">
                     <a href="{{ route('prensa') }}" class="nav-link text-lg flex items-center">
                         Prensa
@@ -66,7 +81,9 @@
     <ul class="p-6 space-y-4">
         <li><a href="{{ route('inicio') }}" class="nav-link text-base">Inicio</a></li>
         <li><a href="{{ route('nosotros') }}" class="nav-link text-base">Nosotros</a></li>
-        <li><a href="{{ route('observatorio') }}" class="nav-link text-base">Observatorio del CTI</a></li>
+        <li><a href="{{ route('observatorio') }}" class="nav-link text-base">Observatorio del CTI</a><a href="https://sigesp5v.fuvidit.com.ve" class="block px-4 py-2 text-[#001f6f] font-medium hover:bg-blue-50 transition text-base">
+                               Sistema Quinto Vértice
+                            </a></li>
         <li>
             <div class="space-y-2">
                 <a href="{{ route('prensa') }}" class="nav-link block text-base">Prensa</a>

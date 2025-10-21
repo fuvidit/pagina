@@ -22,7 +22,7 @@
         {{-- Columna Central: Información de Contacto (centrada) --}}
         <div class="flex flex-col items-center justify-center md:w-2/4 text-center">
             <h3 class="text-xl font-bold text-white mb-2">Contáctanos</h3>
-            <p class="text-gray-300 mb-1"><i class="bi bi-geo-alt-fill text-red-500 mr-2"></i>Calle Via Centro a la Autopista Fco Fajardo con Av Fco de Miranda, Edif Antigua sede Campamento Viveros Odebrecht, Piso Pb, Of Pb, Los Dos Caminos, Caracas, Miranda</p>
+            <p class="text-gray-300 mb-1"><i class="bi bi-geo-alt-fill text-red-500 mr-2"></i>Calle Vía Centro a la Autopista Francisco Fajardo con Av. Francisco de Miranda, Edif. Antigua sede Campamento Viveros Odebrecht, Piso PB, Oficina PB, Los Dos Caminos, Caracas, Miranda</p>
             <p class="text-gray-300 mb-1"><i class="bi bi-telephone-fill text-green-500 mr-2"></i>(0212) 235 06 40</p>
             <p class="text-gray-300"><i class="bi bi-envelope-fill text-blue-400 mr-2"></i>despfuvidit@gmail.com</p>
         </div>
