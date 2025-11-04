@@ -15,7 +15,7 @@
               Comienza con un video 'idle.mp4' en bucle.
               Asegúrate de crear esta carpeta y video en: public/videos/avatar/idle.mp4
             --}}
-            <video id="chat-avatar-video" src="{{ asset('videos/avatar/idle.mp4') }}" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+            <video id="chat-avatar-video" src="{{ asset('videos/avatar/idle.mp4') }}" autoplay loop playsinline volume="0.5" class="object-cover w-full h-full"></video>
         </div>
 
         <div id="chat-text-area" class="flex flex-col bg-white shadow-xl w-80 md:w-96 rounded-r-2xl">
@@ -97,24 +97,24 @@
         // DEBES CREAR UN VIDEO PARA CADA RESPUESTA y actualizar la ruta.
         const responses = {
             'hola' : {
-                text: '¡Hola! ¿Cómo puedo ayudarte hoy?',
-                video: '{{ asset('images/hfmchatbot.mp4') }}'
+                text: '¡Hola, soy Fuvi! ¿Cómo puedo ayudarte hoy?',
+                video: '{{ asset('images/videos/Soy Fuvi.mp4') }}'
             },
             'buenas' : {
                 text: '¡Hola! ¿Cómo puedo ayudarte hoy?',
-                video: '{{ asset('videos/avatar/hola.mp4') }}'
+                video: '{{ asset('images/videos/Soy Fuvi.mp4') }}'
             },
             'adios' : {
                 text: '¡Hasta luego! Que tengas un buen día.',
-                video: '{{ asset('videos/avatar/adios.mp4') }}'
+                video: '{{ asset('images/videos/Fuvi despedida.mp4') }}'
             },
             'adiós' : {
                 text: '¡Hasta luego! Que tengas un buen día.',
-                video: '{{ asset('videos/avatar/adios.mp4') }}'
+                video: '{{ asset('images/videos/Fuvi despedida.mp4') }}'
             },
             'chao' : {
                 text: '¡Hasta luego! Que tengas un buen día.',
-                video: '{{ asset('videos/avatar/adios.mp4') }}'
+                video: '{{ asset('images/videos/Fuvi despedida.mp4') }}'
             },
             'gracias' : {
                 text: '¡De nada! Si necesitas algo más, no dudes en preguntar.',
@@ -125,24 +125,32 @@
                 video: '{{ asset('videos/avatar/ayuda.mp4') }}'
             },
             'significa' : {
-                text: 'Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte.',
+                text: 'Las siglas de la FUVIDIT significan Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte.',
                 video: '{{ asset('videos/avatar/significado.mp4') }}'
             },
             'objetivo' : {
                 text: 'Promover y desarrollar actividades de investigación, desarrollo e innovación que resulten en la creación de conocimiento, productos, soluciones y servicios de muy alto nivel.\n\nAsí como desarrollos innovadores que contribuyan al avance de la ciencia y la tecnología para promover el transporte. el desarrollo de la industria y del país en general, así como la soberanía nacional y las capacidades creativas tecnológicamente independientes.',
-                video: '{{ asset('videos/avatar/objetivo.mp4') }}'
+                video: '{{ asset('images/videos/FUVIDIT_ Innovación Transporte.mp4') }}'
+            },
+            'objetivos' : {
+                text: 'Promover y desarrollar actividades de investigación, desarrollo e innovación que resulten en la creación de conocimiento, productos, soluciones y servicios de muy alto nivel.\n\nAsí como desarrollos innovadores que contribuyan al avance de la ciencia y la tecnología para promover el transporte. el desarrollo de la industria y del país en general, así como la soberanía nacional y las capacidades creativas tecnológicamente independientes.',
+                video: '{{ asset('images/videos/FUVIDIT_ Innovación Transporte.mp4') }}'
             },
             'presidente' : {
                 text: 'Mediante la Gaceta Oficial Nro. 42.346, el 25 de marzo de 2022 se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
-                video: '{{ asset('videos/avatar/presidenta.mp4') }}'
+                video: '{{ asset('images/videos/Nombramiento FUVIDIT.mp4') }}'
             },
             'presidenta' : {
                 text: 'Mediante la Gaceta Oficial Nro. 42.346, el 25 de marzo de 2022 se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
-                video: '{{ asset('videos/avatar/presidenta.mp4') }}'
+                video: '{{ asset('images/videos/Nombramiento FUVIDIT.mp4') }}'
+            },
+            'preside' : {
+                text: 'Mediante la Gaceta Oficial Nro. 42.346, el 25 de marzo de 2022 se designa como presidenta de la Fundación Venezolana de Investigación Desarrollo e Innovación para el Transporte (FUVIDIT), a la ciudadana, Lic. Gertrudis Infante Palacios.',
+                video: '{{ asset('images/videos/Nombramiento FUVIDIT.mp4') }}'
             },
             'funcion' : {
                 text: 'La FUVIDIT se encarga de gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional.\n\nA través de una organización apegada a los principios de la nueva sociedad socialista, prestando un servicio que considere el respeto a la dignidad del ser humano y contribuya a elevar la calidad de vida de los habitantes del País.',
-                video: '{{ asset('videos/avatar/funcion.mp4') }}'
+                video: '{{ asset('images/videos/funcion.mp4') }}'
             },
             'visión' : {
                 text: 'Ser la Fundación socialista de servicio público ejemplar en el país, a través de la prestación de un servicio de investigación, desarrollo e innovación, a nivel nacional e internacional, solidario y de calidad.\n\nCon un alto grado de sensibilidad social, que impulse la soberanía tecnológica e industrial, con el fin de generar soluciones sostenibles para el sistema de transporte multimodal.',
@@ -162,7 +170,11 @@
             },
             'fuvidit' : {
                 text: 'La FUVIDIT se encarga de gestionar procesos de investigación, desarrollo e innovación de sistemas de transporte multimodo nacional e internacional...',
-                video: '{{ asset('videos/avatar/fuvidit.mp4') }}'
+                video: '{{ asset('images/videos/funcion.mp4') }}'
+            },
+            'multimodal' : {
+                text: 'El transporte multimodal es la operación logística que implica la utilización de dos o más modos de transporte diferentes (terrestre, acuático, aéreo, ferroviario) para trasladar pasajeros y mercancías desde su origen hasta su destino final.',
+                video: '{{ asset('images/videos/transporte multimodal.mp4') }}'
             },
             'quienes somos' : {
                 text: 'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
