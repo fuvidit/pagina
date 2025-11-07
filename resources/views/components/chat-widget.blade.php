@@ -180,6 +180,38 @@
                 text: 'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
                 video: '{{ asset('videos/avatar/quienes_somos.mp4') }}'
             },
+            'gmtv' : {
+                text: 'La Gran Misión Transporte Venezuela es una iniciativa gubernamental que busca desarrollar y mejorar el sistema de transporte público del país en sus diferentes modalidades (terrestre, ferroviario, acuático y aéreo). Sus objetivos incluyen la mejora de la infraestructura, el apoyo a los transportistas a través de financiamiento y repuestos, y la optimización de la movilidad para el beneficio de la población.',
+                video: '{{ asset('images/videos/gmtv.mp4') }}'
+            },
+            'gran misión transporte venezuela' : {
+                text: 'La Gran Misión Transporte Venezuela es una iniciativa gubernamental que busca desarrollar y mejorar el sistema de transporte público del país en sus diferentes modalidades (terrestre, ferroviario, acuático y aéreo). Sus objetivos incluyen la mejora de la infraestructura, el apoyo a los transportistas a través de financiamiento y repuestos, y la optimización de la movilidad para el beneficio de la población.',
+                video: '{{ asset('images/videos/gmtv.mp4') }}'
+            },
+            'gran mision transporte venezuela' : {
+                text: 'La Gran Misión Transporte Venezuela es una iniciativa gubernamental que busca desarrollar y mejorar el sistema de transporte público del país en sus diferentes modalidades (terrestre, ferroviario, acuático y aéreo). Sus objetivos incluyen la mejora de la infraestructura, el apoyo a los transportistas a través de financiamiento y repuestos, y la optimización de la movilidad para el beneficio de la población.',
+                video: '{{ asset('images/videos/gmtv.mp4') }}'
+            },
+            'taxonomía' : {
+                text: 'La Taxnonomía se divide de la siguiente forma:\n\nTAXONOMÍA: MEDIO O FIN\n\nSEGÚN SU ORIGEN, se orienta a: RED UNIVERSITARIA, FUVIDIT, TALLER ADENTRO\n\nLINEA DE INVESTIGACIÓN FUVIDIT comprende: MEDIOS FIJOS, MEDIOS MÓVILES, SISTEMAS DE CONTROL, INGENIERÍA INVERSA, CONCIENCIA DEL TRANSPORTE MULTIMODAL, CONCIENCIA PARA EL DESARROLLO DE TECNOLOGÍA AMBIENTAL\n\nTIPO DE INVESTIGACIÓN puede ser: ACADÉMICA, APLICADA, SOCIO PRODUCTIVA, MPPT\n\nPARTICIPACIÓN según sector: PÚBLICA, PRIVADA, MIXTA\n\nCADENCIA INVESTIGATIVA por la frecuencia o duración del proyecto: RESPUESTA INMEDIATA, CORTO PLAZO, MEDIANO PLAZO, LARGO PLAZO\n\nTIPO DE DESARROLLO enfocado a: INGENIERÍA INVERSA, REINGENIERÍA, INVESTIGACIÓN CIENTÍFICA, INNOVACIÓN TECNOLÓGICA\n\nFIN DE LA INVESTIGACIÓN dirigida a: MANTENIMIENTO, REPARACIÓN, SUSTITUCIÓN, CONSTRUCCIÓN, INNOVACIÓN, GENERACIÓN DE CONOCIMIENTO, INVESTIGACIÓN Y DESARROLLO\n\nTIPO DE ACTIVIDAD dirigida a: EDUCATIVA, DESARROLLO, TRANSFERENCIA TECNOLÓGICA',
+                video: '{{ asset('images/videos/taxonomia.mp4') }}'
+            },
+            'taxonomia' : {
+                text: 'La Taxnonomía se divide de la siguiente forma:\n\nTAXONOMÍA: MEDIO O FIN\n\nSEGÚN SU ORIGEN, se orienta a: RED UNIVERSITARIA, FUVIDIT, TALLER ADENTRO\n\nLINEA DE INVESTIGACIÓN FUVIDIT comprende: MEDIOS FIJOS, MEDIOS MÓVILES, SISTEMAS DE CONTROL, INGENIERÍA INVERSA, CONCIENCIA DEL TRANSPORTE MULTIMODAL, CONCIENCIA PARA EL DESARROLLO DE TECNOLOGÍA AMBIENTAL\n\nTIPO DE INVESTIGACIÓN puede ser: ACADÉMICA, APLICADA, SOCIO PRODUCTIVA, MPPT\n\nPARTICIPACIÓN según sector: PÚBLICA, PRIVADA, MIXTA\n\nCADENCIA INVESTIGATIVA por la frecuencia o duración del proyecto: RESPUESTA INMEDIATA, CORTO PLAZO, MEDIANO PLAZO, LARGO PLAZO\n\nTIPO DE DESARROLLO enfocado a: INGENIERÍA INVERSA, REINGENIERÍA, INVESTIGACIÓN CIENTÍFICA, INNOVACIÓN TECNOLÓGICA\n\nFIN DE LA INVESTIGACIÓN dirigida a: MANTENIMIENTO, REPARACIÓN, SUSTITUCIÓN, CONSTRUCCIÓN, INNOVACIÓN, GENERACIÓN DE CONOCIMIENTO, INVESTIGACIÓN Y DESARROLLO\n\nTIPO DE ACTIVIDAD dirigida a: EDUCATIVA, DESARROLLO, TRANSFERENCIA TECNOLÓGICA',
+                video: '{{ asset('images/videos/taxonomia.mp4') }}'
+            },
+            'mppt' : {
+                text: 'El Ministerio del Poder Popular para el Transporte es una institución gubernamental encargada de planificar, desarrollar y gestionar las políticas públicas en materia de transporte terrestre, aéreo y acuático, así como la infraestructura vial y los servicios relacionados en el país. Se encarga de garantizar la movilidad, la conectividad, la seguridad y la eficiencia en el sistema de transporte nacional para el bienestar de la población.',
+                video: '{{ asset('images/videos/mppt.mp4') }}'
+            },
+            'ministerio del poder popular para el transporte' : {
+                text: 'El Ministerio del Poder Popular para el Transporte es una institución gubernamental encargada de planificar, desarrollar y gestionar las políticas públicas en materia de transporte terrestre, aéreo y acuático, así como la infraestructura vial y los servicios relacionados en el país. Se encarga de garantizar la movilidad, la conectividad, la seguridad y la eficiencia en el sistema de transporte nacional para el bienestar de la población.',
+                video: '{{ asset('images/videos/mppt.mp4') }}'
+            },
+            'ministerio de transporte' : {
+                text: 'El Ministerio del Poder Popular para el Transporte es una institución gubernamental encargada de planificar, desarrollar y gestionar las políticas públicas en materia de transporte terrestre, aéreo y acuático, así como la infraestructura vial y los servicios relacionados en el país. Se encarga de garantizar la movilidad, la conectividad, la seguridad y la eficiencia en el sistema de transporte nacional para el bienestar de la población.',
+                video: '{{ asset('images/videos/mppt.mp4') }}'
+            },
 
             // ... Añade aquí TODAS tus otras respuestas con el formato { text: '...', video: '...' }
         };
