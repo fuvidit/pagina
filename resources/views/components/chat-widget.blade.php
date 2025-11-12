@@ -116,14 +116,6 @@
                 text: '¡Hasta luego! Que tengas un buen día.',
                 video: '{{ asset('images/videos/Fuvi despedida.mp4') }}'
             },
-            'gracias' : {
-                text: '¡De nada! Si necesitas algo más, no dudes en preguntar.',
-                video: '{{ asset('videos/avatar/gracias.mp4') }}'
-            },
-            'ayuda' : {
-                text: 'Claro, ¿en qué necesitas ayuda?',
-                video: '{{ asset('videos/avatar/ayuda.mp4') }}'
-            },
             'significa' : {
                 text: 'Las siglas de la FUVIDIT significan Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte.',
                 video: '{{ asset('videos/avatar/significado.mp4') }}'
@@ -176,10 +168,6 @@
                 text: 'El transporte multimodal es la operación logística que implica la utilización de dos o más modos de transporte diferentes (terrestre, acuático, aéreo, ferroviario) para trasladar pasajeros y mercancías desde su origen hasta su destino final.',
                 video: '{{ asset('images/videos/transporte multimodal.mp4') }}'
             },
-            'quienes somos' : {
-                text: 'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
-                video: '{{ asset('videos/avatar/quienes_somos.mp4') }}'
-            },
             'gmtv' : {
                 text: 'La Gran Misión Transporte Venezuela es una iniciativa gubernamental que busca desarrollar y mejorar el sistema de transporte público del país en sus diferentes modalidades (terrestre, ferroviario, acuático y aéreo). Sus objetivos incluyen la mejora de la infraestructura, el apoyo a los transportistas a través de financiamiento y repuestos, y la optimización de la movilidad para el beneficio de la población.',
                 video: '{{ asset('images/videos/gmtv.mp4') }}'
@@ -212,6 +200,79 @@
                 text: 'El Ministerio del Poder Popular para el Transporte es una institución gubernamental encargada de planificar, desarrollar y gestionar las políticas públicas en materia de transporte terrestre, aéreo y acuático, así como la infraestructura vial y los servicios relacionados en el país. Se encarga de garantizar la movilidad, la conectividad, la seguridad y la eficiencia en el sistema de transporte nacional para el bienestar de la población.',
                 video: '{{ asset('images/videos/mppt.mp4') }}'
             },
+            'reingenieria' : {
+                text: 'La ingeniería inversa es el proceso de análisis que va hacia atrás, desarmando o estudiando un producto terminado (físico o digital) para comprender su diseño, estructura y funcionamiento. Su meta es descubrir cómo se hizo algo. En contraste, la reingeniería es un proceso de modificación que va hacia adelante, tomando un sistema o proceso existente, a menudo después de haberlo entendido (posiblemente usando ingeniería inversa), para rediseñarlo radicalmente y lograr una mejora significativa en eficiencia, calidad o funcionalidad. En esencia, una busca entender y la otra busca mejorar y transformar.',
+                video: '{{ asset('images/videos/reingenieria.mp4') }}'
+            },
+            'reingeniería' : {
+                text: 'La ingeniería inversa es el proceso de análisis que va hacia atrás, desarmando o estudiando un producto terminado (físico o digital) para comprender su diseño, estructura y funcionamiento. Su meta es descubrir cómo se hizo algo. En contraste, la reingeniería es un proceso de modificación que va hacia adelante, tomando un sistema o proceso existente, a menudo después de haberlo entendido (posiblemente usando ingeniería inversa), para rediseñarlo radicalmente y lograr una mejora significativa en eficiencia, calidad o funcionalidad. En esencia, una busca entender y la otra busca mejorar y transformar.',
+                video: '{{ asset('images/videos/reingenieria.mp4') }}'
+            },
+            'ingeniería inversa' : {
+                text: 'La ingeniería inversa es el proceso de análisis que va hacia atrás, desarmando o estudiando un producto terminado (físico o digital) para comprender su diseño, estructura y funcionamiento. Su meta es descubrir cómo se hizo algo. En contraste, la reingeniería es un proceso de modificación que va hacia adelante, tomando un sistema o proceso existente, a menudo después de haberlo entendido (posiblemente usando ingeniería inversa), para rediseñarlo radicalmente y lograr una mejora significativa en eficiencia, calidad o funcionalidad. En esencia, una busca entender y la otra busca mejorar y transformar.',
+                video: '{{ asset('images/videos/reingenieria.mp4') }}'
+            },
+            'ingenieria inversa' : {
+                text: 'La ingeniería inversa es el proceso de análisis que va hacia atrás, desarmando o estudiando un producto terminado (físico o digital) para comprender su diseño, estructura y funcionamiento. Su meta es descubrir cómo se hizo algo. En contraste, la reingeniería es un proceso de modificación que va hacia adelante, tomando un sistema o proceso existente, a menudo después de haberlo entendido (posiblemente usando ingeniería inversa), para rediseñarlo radicalmente y lograr una mejora significativa en eficiencia, calidad o funcionalidad. En esencia, una busca entender y la otra busca mejorar y transformar.',
+                video: '{{ asset('images/videos/reingenieria.mp4') }}'
+            },
+            'humberto fernandez moran' : {
+                text:'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+                video: '{{ asset('images/videos/hfm.mp4') }}'
+            },
+            'humberto fernández morán' : {
+                text:'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+                video: '{{ asset('images/videos/hfm.mp4') }}'
+            },
+            'humberto fernandez morán' : {
+                text:'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+                video: '{{ asset('images/videos/hfm.mp4') }}'
+            },
+            'humberto fernández moran' : {
+                text:'Humberto Fernández-Morán fue un médico y reconocido científico venezolano, considerado uno de los más importantes del siglo XX. Nació en Concepción, Zulia, el 18 de febrero de 1924 y falleció en Estocolmo, Suecia, el 17 de marzo de 1999.',
+                video: '{{ asset('images/videos/hfm.mp4') }}'
+            },
+            'mision' : {
+                text:'La misión de la FUVIDIT es promover y desarrollar actividades de investigación, desarrollo e innovación en el sector transporte, contribuyendo al avance científico y tecnológico del país.',
+                video: '{{ asset('images/videos/mision.mp4') }}'
+            },
+            'misión' : {
+                text:'La misión de la FUVIDIT es promover y desarrollar actividades de investigación, desarrollo e innovación en el sector transporte, contribuyendo al avance científico y tecnológico del país.',
+                video: '{{ asset('images/videos/mision.mp4') }}'
+            },
+            'valores' : {
+                text:'Nuestros valores se centran en la excelencia, la innovación, el compromiso social, la ética y la transparencia en todas nuestras actividades.',
+                video: '{{ asset('images/videos/valores.mp4') }}'
+            },
+            'proyectos' : {
+                text:'La FUVIDIT desarrolla proyectos de investigación e innovación en diversas áreas del transporte, buscando soluciones sostenibles y eficientes. Puedes encontrar más detalles en la sección de "Observatorio" o "Prensa" de nuestra página web.',
+                video: '{{ asset('images/videos/proyectos.mp4') }}'
+            },
+            'quienes somos' : {
+                text:'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
+                video: '{{ asset('images/videos/qs.mp4') }}'
+            },
+            'quiénes somos' : {
+                text:'Somos la Fundación Venezolana de Investigación, Desarrollo e Innovación para el Transporte (FUVIDIT). Puedes conocer más sobre nosotros en la sección "Nosotros" de nuestra página web.',
+                video: '{{ asset('images/videos/qs.mp4') }}'
+            },
+            'ministro de transporte' : {
+                text:'El ministro de Transporte de Venezuela, responsable de la Gran Misión Transporte, es Ramón Velásquez Araguayán.',
+                video: '{{ asset('images/videos/mintrans.mp4') }}'
+            },
+            'ministro del transporte' : {
+                text:'El ministro de Transporte de Venezuela, responsable de la Gran Misión Transporte, es Ramón Velásquez Araguayán.',
+                video: '{{ asset('images/videos/mintrans.mp4') }}'
+            },
+            'líneas de investigación' : {
+                text:'Medios Móviles, Medios Fijos, Sistemas de Control, Ingeniería Inversa, Conciencia del Transporte Multimodal y Conciencia para el Desarrollo de Tecnología Ambiental.',
+                video: '{{ asset('images/videos/lineas.mp4') }}'
+            },
+            'lineas de investigacion' : {
+                text:'Medios Móviles, Medios Fijos, Sistemas de Control, Ingeniería Inversa, Conciencia del Transporte Multimodal y Conciencia para el Desarrollo de Tecnología Ambiental.',
+                video: '{{ asset('images/videos/lineas.mp4') }}'
+            },
+
 
             // ... Añade aquí TODAS tus otras respuestas con el formato { text: '...', video: '...' }
         };
@@ -219,7 +280,7 @@
         // --- MODIFICADO: Respuesta por defecto ---
         const defaultResponse = {
             text: 'Lo siento, no entendí tu pregunta. ¿Podrías reformularla o preguntar sobre temas como "objetivo", "contacto", "ubicación", "presidente" o "creación"?',
-            video: '{{ asset('videos/avatar/default.mp4') }}' // Video para "no entendí"
+            video: '{{ asset('images/videos/noresponse.mp4') }}' // Video para "no entendí"
         };
 
         // --- NUEVO: Función para reproducir el video del avatar ---
