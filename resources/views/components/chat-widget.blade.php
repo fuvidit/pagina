@@ -272,6 +272,118 @@
                 text:'Medios Móviles, Medios Fijos, Sistemas de Control, Ingeniería Inversa, Conciencia del Transporte Multimodal y Conciencia para el Desarrollo de Tecnología Ambiental.',
                 video: '{{ asset('images/videos/lineas.mp4') }}'
             },
+            'unetrans' : {
+                text:'La Universidad Nacional Experimental del Transporte, nace en febrero de 2019 y a ella se le adscribe el Instituto Universitario Tecnológico ”Federico Rivero Palacios”, casa de estudio con una tradición histórica de más de medio siglo, de reconocido prestigio a nivel nacional e internacional, conformada por una pujante comunidad académica integrada por más de 1.200 estudiantes matriculados, 220 profesores y 200 empleados administrativos y obreros, que permiten prestar servicio de educación universitaria de calidad a todas las regiones del estado Bolivariano de Miranda, constituyéndose en una de las universidades técnico-científica más importante del país.',
+                video: '{{ asset('images/videos/lineas.mp4') }}'
+            },
+            'pendolas' : {
+                text:'Elaboración de estudios, producción de planos y fabricación de péndolas (cuenta gotas), para los sistemas ferroviarios electrificados por catenaria.',
+                video: '{{ asset('images/videos/pendolas.mp4') }}'
+            },
+            'péndolas' : {
+                text:'Elaboración de estudios, producción de planos y fabricación de péndolas (cuenta gotas), para los sistemas ferroviarios electrificados por catenaria.',
+                video: '{{ asset('images/videos/pendolas.mp4') }}'
+            },
+            'aislantes' : {
+                text:'En el marco de seguir impulsando la sustitución de importaciones dentro de la Gran Misión Transporte Venezuela, se da inicio a los estudios de caracterización de materiales, elaboración de planos y especificaciones técnicas, para posterior fabricación de prototipos de las piezas de aislantes asimétricos de sistemas ferroviarios de electrificación por catenarias.',
+                video: '{{ asset('images/videos/aislantes.mp4') }}'
+            },
+            'aislante' : {
+                text:'En el marco de seguir impulsando la sustitución de importaciones dentro de la Gran Misión Transporte Venezuela, se da inicio a los estudios de caracterización de materiales, elaboración de planos y especificaciones técnicas, para posterior fabricación de prototipos de las piezas de aislantes asimétricos de sistemas ferroviarios de electrificación por catenarias.',
+                video: '{{ asset('images/videos/aislantes.mp4') }}'
+            },
+            'mantenimiento' : {
+                text:'Es un proyecto de desarrollo aplicado y de  procesamiento de datos (Java script, PHP, React.js, Node.js); cuya orientación es la gestión del  mantenimiento preventivo y correctivo que podrá ser implantado en los diferentes modos de transporte.',
+                video: '{{ asset('images/videos/mantenimiento.mp4') }}'
+            },
+            'sistema de gestión de mantenimiento' : {
+                text:'Es un proyecto de desarrollo aplicado y de  procesamiento de datos (Java script, PHP, React.js, Node.js); cuya orientación es la gestión del  mantenimiento preventivo y correctivo que podrá ser implantado en los diferentes modos de transporte.',
+                video: '{{ asset('images/videos/mantenimiento.mp4') }}'
+            },
+            'sistema de gestion de mantenimiento' : {
+                text:'Es un proyecto de desarrollo aplicado y de  procesamiento de datos (Java script, PHP, React.js, Node.js); cuya orientación es la gestión del  mantenimiento preventivo y correctivo que podrá ser implantado en los diferentes modos de transporte.',
+                video: '{{ asset('images/videos/mantenimiento.mp4') }}'
+            },
+            'sistema de mantenimiento' : {
+                text:'Es un proyecto de desarrollo aplicado y de  procesamiento de datos (Java script, PHP, React.js, Node.js); cuya orientación es la gestión del  mantenimiento preventivo y correctivo que podrá ser implantado en los diferentes modos de transporte.',
+                video: '{{ asset('images/videos/mantenimiento.mp4') }}'
+            },
+            'biometrico' : {
+                text:'El proyecto contiene la recopilación de información personal, biometría de huella dactilar y facial que permitirá la identificación de los pasajeros en las estaciones de un sistema ferroviario.',
+                video: '{{ asset('images/videos/biometrico.mp4') }}'
+            },
+            'biométrico' : {
+                text:'El proyecto contiene la recopilación de información personal, biometría de huella dactilar y facial que permitirá la identificación de los pasajeros en las estaciones de un sistema ferroviario.',
+                video: '{{ asset('images/videos/biometrico.mp4') }}'
+            },
+            'bridas' : {
+                text:'Elaboración de estudios, producción de planos y fabricación de bridas de empalme, para los sistemas ferroviarios electrificados por catenaria.',
+                video: '{{ asset('images/videos/bridas.mp4') }}'
+            },
+            'brida' : {
+                text:'Elaboración de estudios, producción de planos y fabricación de bridas de empalme, para los sistemas ferroviarios electrificados por catenaria.',
+                video: '{{ asset('images/videos/bridas.mp4') }}'
+            },
+            'pinza de desembrague' : {
+                text:'Este proyecto contempla los estudios metalográficos, a través del escáner infrarrojo, levantamientos de planos, elaboración de especificaciones técnicas y modelos 3D, a través de sistemas computarizados.',
+                video: '{{ asset('images/videos/pinza.mp4') }}'
+            },
+            'pinza' : {
+                text:'Este proyecto contempla los estudios metalográficos, a través del escáner infrarrojo, levantamientos de planos, elaboración de especificaciones técnicas y modelos 3D, a través de sistemas computarizados.',
+                video: '{{ asset('images/videos/pinza.mp4') }}'
+            },
+            'overhauling' : {
+                text:'Se contempló realizar la ingenieria inversa completa del compresor para el reemplazo de componentes de origen internacional.',
+                video: '{{ asset('images/videos/overhauling.mp4') }}',
+            },
+            'compresor' : {
+                text:'Se contempló realizar la ingenieria inversa completa del compresor para el reemplazo de componentes de origen internacional.',
+                video: '{{ asset('images/videos/overhauling.mp4') }}'
+            },
+            'torno de ruedas' : {
+                text:'Recuperación del sistema operativo y de la data del disco duro, restableciendo los programas que permiten el funcionamiento del torno bajo piso utilizado para el perfilado de las ruedas de trenes, del Metro de Maracaibo e IFE.',
+                video: '{{ asset('images/videos/torno.mp4') }}'
+            },
+            'torno' : {
+                text:'Recuperación del sistema operativo y de la data del disco duro, restableciendo los programas que permiten el funcionamiento del torno bajo piso utilizado para el perfilado de las ruedas de trenes, del Metro de Maracaibo e IFE.',
+                video: '{{ asset('images/videos/torno.mp4') }}'
+            },
+            'durmientes' : {
+                text:'A través del Instituto de Materiales y Modelos Estructurales de la Universidad Central de Venezuela, se han realizado 5 ensayos físicos y mecánicos de muestras de madera nacional. Las maderas sometidas a los ensayos son las especies Congrio y Pilón Alcornoque, autóctonas del estado Bolívar. Así mismo, se han llevado a cabo estudios de robles procedentes del estado LARA.',
+                video: '{{ asset('images/videos/durmientes.mp4') }}'
+            },
+            'pantógrafo' : {
+                text:'Se llevo a cabo los estudios correspondientes, en conjunto con Grafitos del Orinoco, C.A, para la sustitución de importaciones de las placas de contacto para la energización de trenes por catenarias de dicho sistema.',
+                video: '{{ asset('images/videos/pantografo.mp4') }}'
+            },
+            'pantografo' : {
+                text:'Se llevo a cabo los estudios correspondientes, en conjunto con Grafitos del Orinoco, C.A, para la sustitución de importaciones de las placas de contacto para la energización de trenes por catenarias de dicho sistema.',
+                video: '{{ asset('images/videos/pantografo.mp4') }}'
+            },
+            'patín' : {
+                text:'Se llevo a cabo los estudios correspondientes, en conjunto con Grafitos del Orinoco, C.A, para la sustitución de importaciones de las placas de contacto para la energización de trenes por catenarias de dicho sistema.',
+                video: '{{ asset('images/videos/pantografo.mp4') }}'
+            },
+            'patin' : {
+                text:'Se llevo a cabo los estudios correspondientes, en conjunto con Grafitos del Orinoco, C.A, para la sustitución de importaciones de las placas de contacto para la energización de trenes por catenarias de dicho sistema.',
+                video: '{{ asset('images/videos/pantografo.mp4') }}'
+            },
+            'grafito' : {
+                text:'Se llevo a cabo los estudios correspondientes, en conjunto con Grafitos del Orinoco, C.A, para la sustitución de importaciones de las placas de contacto para la energización de trenes por catenarias de dicho sistema.',
+                video: '{{ asset('images/videos/pantografo.mp4') }}'
+            },
+            'biela' : {
+                text:'Partiendo de la ingeniería inversa se innovo con la fabricación de una biela prototipo, que forma parte fundamental del compresor reciprocante marca Freinrail modelo LP9950 del Metro de Caracas.',
+                video: '{{ asset('images/videos/biela.mp4') }}'
+            },
+            'compresor reciprocante' : {
+                text:'Partiendo de la ingeniería inversa se innovo con la fabricación de una biela prototipo, que forma parte fundamental del compresor reciprocante marca Freinrail modelo LP9950 del Metro de Caracas.',
+                video: '{{ asset('images/videos/biela.mp4') }}'
+            },
+
+
+
+
 
 
             // ... Añade aquí TODAS tus otras respuestas con el formato { text: '...', video: '...' }
