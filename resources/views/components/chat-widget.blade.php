@@ -334,7 +334,7 @@
             },
             'overhauling' : {
                 text:'Se contempló realizar la ingenieria inversa completa del compresor para el reemplazo de componentes de origen internacional.',
-                video: '{{ asset('images/videos/overhauling.mp4') }}',
+                video: '{{ asset('images/videos/overhauling.mp4') }}'
             },
             'compresor' : {
                 text:'Se contempló realizar la ingenieria inversa completa del compresor para el reemplazo de componentes de origen internacional.',
